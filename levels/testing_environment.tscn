@@ -88,8 +88,12 @@ valid_teleport_mask = 4291100657
 teleport_button_action = "primary_click"
 
 [node name="RightHand" parent="XROrigin3D/RightHand" instance=ExtResource("7_6f3au")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00357127, -0.0266159, 0.0354637)
 
 [node name="PlayerBody" parent="XROrigin3D" instance=ExtResource("8_jgb4u")]
 
 [node name="SquareBase" parent="." instance=ExtResource("9_tbnho")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0625, -2.53577)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.0625, -2.53577)
+
+[node name="SquareBase2" parent="." instance=ExtResource("9_tbnho")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.0625, -2.53577)
