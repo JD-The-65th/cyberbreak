@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://v6tatf78qgf8" path="res://scenes/square_base.tscn" id="9_tbnho"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_gx25x"]
+rayleigh_color = Color(0, 0.282353, 0.521569, 1)
+mie_color = Color(0.917647, 0.686275, 0, 1)
 
 [sub_resource type="Sky" id="Sky_6p37l"]
 sky_material = SubResource("PhysicalSkyMaterial_gx25x")
@@ -43,7 +45,7 @@ data = PackedVector3Array(-50, 1, 50, 50, 1, 50, -50, -1, 50, 50, 1, 50, 50, -1,
 environment = SubResource("Environment_tjlfa")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+transform = Transform3D(-0.866025, -0.433013, 0.25, -0.129342, 0.676994, 0.724534, -0.482981, 0.595129, -0.642301, 0, 0, 0)
 shadow_enabled = true
 directional_shadow_mode = 1
 
