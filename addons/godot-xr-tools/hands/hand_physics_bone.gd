@@ -1,4 +1,3 @@
-@tool
 class_name XRToolsHandPhysicsBone
 extends BoneAttachment3D
 
