@@ -31,6 +31,11 @@ XRToolsUserSettings="*res://addons/godot-xr-tools/user_settings/user_settings.gd
 3d_physics/layer_21="Pointable"
 3d_physics/layer_22="Hand Pose Area"
 
+[physics]
+
+common/physics_ticks_per_second=72
+common/max_physics_steps_per_frame=12
+
 [rendering]
 
 renderer/rendering_method="mobile"
