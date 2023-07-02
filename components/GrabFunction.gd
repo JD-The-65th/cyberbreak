@@ -55,7 +55,7 @@ func _on_grip_pressed():
 		picked_up_object = closest_object
 		original_collision_layer = picked_up_object.collision_layer
 		original_collision_mask = picked_up_object.collision_mask
-		picked_up_object.set_layer_mask(picked_up_layers)
+		picked_up_object.set_collision_layer(picked_up_layers)
 		picked_up_object.set_collision_mask(picked_up_mask)
 		
 		
@@ -64,7 +64,7 @@ func _on_grip_pressed():
 func _on_grip_release():
 	if picked_up_object:
 		joint.node_b = ""
-		picked_up_object.set_layer_mask(original_collision_layer)
+		picked_up_object.set_collision_layer(original_collision_layer)
 		picked_up_object.set_collision_mask(original_collision_mask)
 		
 		picked_up_object = null

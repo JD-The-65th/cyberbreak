@@ -125,8 +125,6 @@ transform = Transform3D(1, 0, 0, 0, 0.999991, 0.00413642, 0, -0.00413642, 0.9999
 collision_layer = 131072
 collision_mask = 7
 script = ExtResource("10_j2onc")
-picked_up_layers = 65536
-picked_up_mask = 65543
 
 [node name="Area3D" type="Area3D" parent="XROrigin3D/RightHand/GrabFunction"]
 collision_layer = 131072
@@ -151,36 +149,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 4.19095e-09, 0, -4.19095e-09, 1, 0, 0.158
 text = "hello world"
 
 [node name="Generic6DOFJoint3D" type="Generic6DOFJoint3D" parent="XROrigin3D/RightHand/GrabFunction"]
-node_a = NodePath("..")
-
-[node name="GrabFunction2" type="StaticBody3D" parent="XROrigin3D/RightHand"]
-transform = Transform3D(1, 0, 0, 0, 0.999991, 0.00413642, 0, -0.00413642, 0.999991, 0.0143744, -0.0539311, 0.113181)
-collision_layer = 131072
-collision_mask = 7
-script = ExtResource("10_j2onc")
-
-[node name="Area3D" type="Area3D" parent="XROrigin3D/RightHand/GrabFunction2"]
-collision_layer = 131072
-collision_mask = 4
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/RightHand/GrabFunction2/Area3D"]
-shape = SubResource("SphereShape3D_f1w41")
-
-[node name="PinJoint3D" type="PinJoint3D" parent="XROrigin3D/RightHand/GrabFunction2"]
-transform = Transform3D(1, 0, 0, 0, 7.69106, 2.6077e-08, 0, -1.49012e-08, 8.85036, -0.0027501, 0, 0)
-node_a = NodePath("..")
-params/bias = 0.99
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/RightHand/GrabFunction2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00122476, 0, 0)
-mesh = SubResource("BoxMesh_2l1hh")
-surface_material_override/0 = SubResource("ShaderMaterial_28sid")
-
-[node name="Label3D" type="Label3D" parent="XROrigin3D/RightHand/GrabFunction2"]
-transform = Transform3D(1, 0, 0, 0, 1, 4.19095e-09, 0, -4.19095e-09, 1, 0, 0.15814, -0.182397)
-text = "hello world"
-
-[node name="Generic6DOFJoint3D" type="Generic6DOFJoint3D" parent="XROrigin3D/RightHand/GrabFunction2"]
 node_a = NodePath("..")
 
 [node name="PlayerBody" parent="XROrigin3D" instance=ExtResource("8_jgb4u")]
@@ -214,5 +182,3 @@ collision_mask = 7
 
 [connection signal="body_entered" from="XROrigin3D/RightHand/GrabFunction/Area3D" to="XROrigin3D/RightHand/GrabFunction" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="XROrigin3D/RightHand/GrabFunction/Area3D" to="XROrigin3D/RightHand/GrabFunction" method="_on_area_3d_body_exited"]
-[connection signal="body_entered" from="XROrigin3D/RightHand/GrabFunction2/Area3D" to="XROrigin3D/RightHand/GrabFunction2" method="_on_area_3d_body_entered"]
-[connection signal="body_exited" from="XROrigin3D/RightHand/GrabFunction2/Area3D" to="XROrigin3D/RightHand/GrabFunction2" method="_on_area_3d_body_exited"]
