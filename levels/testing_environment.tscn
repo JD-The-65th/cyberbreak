@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://c1sf2cab6jct7"]
+[gd_scene load_steps=24 format=3 uid="uid://c1sf2cab6jct7"]
 
 [ext_resource type="Texture2D" uid="uid://b7qnw50peaqjp" path="res://addons/kenney_prototype_textures/dark/texture_08.png" id="1_y1pph"]
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="2_nq5sa"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="9_b02xp"]
 [ext_resource type="PackedScene" uid="uid://v6tatf78qgf8" path="res://scenes/square_base.tscn" id="9_tbnho"]
 [ext_resource type="Script" path="res://components/GrabFunction.gd" id="10_j2onc"]
+[ext_resource type="PackedScene" uid="uid://c0te0uofm7c26" path="res://scenes/v2phys_joint.tscn" id="13_1ycmv"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_gx25x"]
 rayleigh_color = Color(0, 0.282353, 0.521569, 1)
@@ -136,6 +137,8 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall/Wall"]
 shape = SubResource("ConcavePolygonShape3D_lbnb3")
+
+[node name="Joint" parent="." instance=ExtResource("13_1ycmv")]
 
 [connection signal="body_entered" from="XROrigin3D/RightHand/GrabFunction/Area3D" to="XROrigin3D/RightHand/GrabFunction" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="XROrigin3D/RightHand/GrabFunction/Area3D" to="XROrigin3D/RightHand/GrabFunction" method="_on_area_3d_body_exited"]
