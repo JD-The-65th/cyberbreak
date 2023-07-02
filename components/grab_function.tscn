@@ -34,7 +34,5 @@ surface_material_override/0 = SubResource("ShaderMaterial_28sid")
 [node name="Generic6DOFJoint3D" type="Generic6DOFJoint3D" parent="."]
 node_a = NodePath("..")
 
-[node name="RemoteTransform3D" type="RemoteTransform3D" parent="."]
-
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

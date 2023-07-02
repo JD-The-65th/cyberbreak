@@ -1,25 +1,8 @@
-@tool
 extends StaticBody3D
 class_name GrabFunction
 
-
-
-# Grab Method related Variables
-
 @onready var joint = $Generic6DOFJoint3D
-@onready var remoteTransform = $RemoteTransform3D
 
-enum GrabType {
-	JOINT,
-	REMOTE_TRANSFORM
-}
-
-@export var grab_method: GrabType = GrabType.JOINT
-
-@export var joint_target: PhysicsBody3D = self
-
-
-# Memory for Grabbing Processing
 var closest_object : Node3D = null
 var picked_up_object : Node3D = null
 var grip_pressed : bool = false
@@ -62,11 +45,7 @@ func _process(delta):
 
 func _on_grip_pressed():
 	if closest_object:
-		if grab_method == GrabType.REMOTE_TRANSFORM:
-			remoteTransform.set_remote_node(closest_object.get_path())
-		else:
-			joint.node_b = closest_object.get_path()
-		
+		joint.node_b = closest_object.get_path()
 		picked_up_object = closest_object
 		original_collision_layer = picked_up_object.collision_layer
 		original_collision_mask = picked_up_object.collision_mask
@@ -78,11 +57,7 @@ func _on_grip_pressed():
 	
 func _on_grip_release():
 	if picked_up_object:
-		if grab_method == GrabType.REMOTE_TRANSFORM:
-			remoteTransform.set_remote_node("")
-		else:
-			joint.node_b = ""
-		
+		joint.node_b = ""
 		picked_up_object.set_collision_layer(original_collision_layer)
 		picked_up_object.set_collision_mask(original_collision_mask)
 		
