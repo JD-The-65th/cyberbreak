@@ -14,7 +14,8 @@
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_gx25x"]
 rayleigh_color = Color(0, 0.282353, 0.521569, 1)
-mie_color = Color(0.917647, 0.686275, 0, 1)
+mie_coefficient = 0.04
+mie_color = Color(0.596078, 0, 0.576471, 1)
 
 [sub_resource type="Sky" id="Sky_6p37l"]
 sky_material = SubResource("PhysicalSkyMaterial_gx25x")
@@ -99,9 +100,6 @@ teleport_button_action = "primary_click"
 [node name="MovementTurn" parent="XROrigin3D/RightHand" instance=ExtResource("9_b02xp")]
 
 [node name="RightPhysicsHand" parent="XROrigin3D/RightHand" instance=ExtResource("9_1yrn1")]
-
-[node name="StaticBody3D" type="StaticBody3D" parent="XROrigin3D/RightHand"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00526053, -0.0380732, 0.115932)
 
 [node name="PlayerBody" parent="XROrigin3D" instance=ExtResource("8_jgb4u")]
 
