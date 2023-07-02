@@ -162,6 +162,7 @@ skeleton = NodePath("")
 shape = SubResource("ConcavePolygonShape3D_lbnb3")
 
 [node name="Joint" parent="." instance=ExtResource("13_1ycmv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.59452)
 
 [connection signal="body_entered" from="XROrigin3D/RightHand/GrabFunction/Area3D" to="XROrigin3D/RightHand/GrabFunction" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="XROrigin3D/RightHand/GrabFunction/Area3D" to="XROrigin3D/RightHand/GrabFunction" method="_on_area_3d_body_exited"]
