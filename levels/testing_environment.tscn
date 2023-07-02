@@ -42,8 +42,8 @@ absorbent = true
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_o5pmh"]
 data = PackedVector3Array(-50, 1, 50, 50, 1, 50, -50, -1, 50, 50, 1, 50, 50, -1, 50, -50, -1, 50, 50, 1, -50, -50, 1, -50, 50, -1, -50, -50, 1, -50, -50, -1, -50, 50, -1, -50, 50, 1, 50, 50, 1, -50, 50, -1, 50, 50, 1, -50, 50, -1, -50, 50, -1, 50, -50, 1, -50, -50, 1, 50, -50, -1, -50, -50, 1, 50, -50, -1, 50, -50, -1, -50, 50, 1, 50, -50, 1, 50, 50, 1, -50, -50, 1, 50, -50, 1, -50, 50, 1, -50, -50, -1, 50, 50, -1, 50, -50, -1, -50, 50, -1, 50, 50, -1, -50, -50, -1, -50)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_m4npq"]
-size = Vector3(0.0814482, 0.156497, 0.205789)
+[sub_resource type="SphereShape3D" id="SphereShape3D_f1w41"]
+radius = 0.072024
 
 [sub_resource type="BoxMesh" id="BoxMesh_wrg6n"]
 size = Vector3(4, 3, 0.5)
@@ -117,8 +117,7 @@ collision_layer = 131072
 collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="XROrigin3D/RightHand/GrabFunction/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0163372, -0.029985)
-shape = SubResource("BoxShape3D_m4npq")
+shape = SubResource("SphereShape3D_f1w41")
 
 [node name="PinJoint3D" type="PinJoint3D" parent="XROrigin3D/RightHand/GrabFunction"]
 node_a = NodePath("..")
