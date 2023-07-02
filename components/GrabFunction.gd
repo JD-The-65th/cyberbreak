@@ -1,7 +1,7 @@
 extends StaticBody3D
 class_name GrabFunction
 
-@onready var joint : PinJoint3D = $PinJoint3D
+@onready var joint = $Generic6DOFJoint3D
 
 var closest_object : Node3D = null
 var picked_up_object : Node3D = null
