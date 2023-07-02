@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c1sf2cab6jct7"]
+[gd_scene load_steps=27 format=3 uid="uid://c1sf2cab6jct7"]
 
 [ext_resource type="Texture2D" uid="uid://b7qnw50peaqjp" path="res://addons/kenney_prototype_textures/dark/texture_08.png" id="1_y1pph"]
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="2_nq5sa"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="9_b02xp"]
 [ext_resource type="PackedScene" uid="uid://v6tatf78qgf8" path="res://scenes/square_base.tscn" id="9_tbnho"]
 [ext_resource type="Script" path="res://components/GrabFunction.gd" id="10_j2onc"]
+[ext_resource type="Shader" path="res://materials/testHolo.gdshader" id="11_4l42x"]
 [ext_resource type="PackedScene" uid="uid://c0te0uofm7c26" path="res://scenes/v2phys_joint.tscn" id="13_1ycmv"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_gx25x"]
@@ -45,6 +46,13 @@ data = PackedVector3Array(-50, 1, 50, 50, 1, 50, -50, -1, 50, 50, 1, 50, 50, -1,
 [sub_resource type="SphereShape3D" id="SphereShape3D_f1w41"]
 radius = 0.072024
 
+[sub_resource type="BoxMesh" id="BoxMesh_2l1hh"]
+size = Vector3(0.01, 0.01, 0.01)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_28sid"]
+render_priority = 0
+shader = ExtResource("11_4l42x")
+
 [sub_resource type="BoxMesh" id="BoxMesh_wrg6n"]
 size = Vector3(4, 3, 0.5)
 
@@ -70,6 +78,17 @@ skeleton = NodePath("")
 physics_material_override = SubResource("PhysicsMaterial_e1ojm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_o5pmh")
+
+[node name="Floor3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1, 0)
+mesh = SubResource("BoxMesh_slpun")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor3"]
+physics_material_override = SubResource("PhysicsMaterial_e1ojm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor3/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_o5pmh")
 
 [node name="StartXR" parent="." instance=ExtResource("2_nq5sa")]
@@ -121,6 +140,11 @@ shape = SubResource("SphereShape3D_f1w41")
 
 [node name="PinJoint3D" type="PinJoint3D" parent="XROrigin3D/RightHand/GrabFunction"]
 node_a = NodePath("..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/RightHand/GrabFunction"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00122476, 0, 0)
+mesh = SubResource("BoxMesh_2l1hh")
+surface_material_override/0 = SubResource("ShaderMaterial_28sid")
 
 [node name="PlayerBody" parent="XROrigin3D" instance=ExtResource("8_jgb4u")]
 
