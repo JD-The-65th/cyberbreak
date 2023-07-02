@@ -1,7 +1,9 @@
 extends StaticBody3D
 class_name GrabFunction
 
+# The Joint the Object attaches to
 @onready var joint = $Generic6DOFJoint3D
+
 
 var closest_object : Node3D = null
 var picked_up_object : Node3D = null
@@ -39,11 +41,14 @@ func _on_grip_pressed():
 	if closest_object:
 		joint.node_b = closest_object.get_path()
 		picked_up_object = closest_object
+		picked_up_object.set_collision_layer_bit(17, true)
 	
 func _on_grip_release():
 	if picked_up_object:
+		picked_up_object.set_collision_layer_bit(17, false)
 		joint.node_b = ""
 		picked_up_object = null
+		
 
 
 func _on_area_3d_body_entered(body):
