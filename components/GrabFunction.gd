@@ -19,8 +19,10 @@ var grip_pressed : bool = false
 @onready var dblabel : Label3D = $Label3D
 
 # Collision Layer and Mask for picked up objects
-@export_flags_3d_physics var picked_up_layers
-@export_flags_3d_physics var picked_up_mask
+@export_flags_3d_physics var picked_up_layers = pow(2, 17-1) 
+
+@export_flags_3d_physics var picked_up_mask = pow(2, 1-1) + pow(2, 2-1) + pow(2, 3-1) + pow(2, 17-1)
+
 
 
 
@@ -70,7 +72,9 @@ func _on_grip_release():
 
 func _on_area_3d_body_entered(body):
 	dblabel.text = "body entered"
-	if body.get_class() == "RigidBody3D":
+	if body == picked_up_object:
+		pass
+	elif body.get_class() == "RigidBody3D":
 		dblabel.text = "body entered + RigidBody"
 		closest_object = body
 	
@@ -78,5 +82,7 @@ func _on_area_3d_body_entered(body):
 
 
 func _on_area_3d_body_exited(body):
-	if closest_object:
+	if body == picked_up_object:
+		pass
+	elif closest_object:
 		closest_object = null
