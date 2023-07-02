@@ -33,6 +33,7 @@ XRToolsUserSettings="*res://addons/godot-xr-tools/user_settings/user_settings.gd
 
 [physics]
 
+3d/run_on_separate_thread=true
 common/physics_ticks_per_second=72
 common/max_physics_steps_per_frame=12
 
