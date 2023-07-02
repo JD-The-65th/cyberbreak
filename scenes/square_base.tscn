@@ -18,6 +18,7 @@ roughness = 0.0
 [node name="SquareBase" type="Node3D"]
 
 [node name="PickableObject" parent="." instance=ExtResource("1_ga4qi")]
+mass = 1.62
 ranged_grab_method = 2
 
 [node name="CollisionShape3D" parent="PickableObject" index="0"]
