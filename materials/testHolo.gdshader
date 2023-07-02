@@ -1,3 +1,4 @@
+// Courtesey of https://www.reddit.com/r/godot/comments/14j0i8g/quick_custom_shader_in_6_lines_of_code_screenshot/
 shader_type spatial;
 render_mode unshaded, blend_mix, cull_disabled;
 void fragment() {
