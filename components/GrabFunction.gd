@@ -16,7 +16,6 @@ var grip_pressed : bool = false
 ## Grip threshold (from configuration)
 @onready var _grip_threshold : float = XRTools.get_grip_threshold()
 
-@onready var dblabel : Label3D = $Label3D
 
 # Collision Layer and Mask for picked up objects
 @export_flags_3d_physics var picked_up_layers = pow(2, 17-1) 
@@ -30,11 +29,6 @@ var grip_pressed : bool = false
 @onready var original_collision_layer : int
 @onready var original_collision_mask : int
 
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	dblabel.text = "ready"
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -71,11 +65,9 @@ func _on_grip_release():
 
 
 func _on_area_3d_body_entered(body):
-	dblabel.text = "body entered"
 	if body == picked_up_object:
 		pass
 	elif body.get_class() == "RigidBody3D":
-		dblabel.text = "body entered + RigidBody"
 		closest_object = body
 	
 
