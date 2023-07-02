@@ -125,6 +125,8 @@ transform = Transform3D(1, 0, 0, 0, 0.999991, 0.00413642, 0, -0.00413642, 0.9999
 collision_layer = 131072
 collision_mask = 7
 script = ExtResource("10_j2onc")
+picked_up_layers = 65540
+picked_up_mask = 65543
 
 [node name="Area3D" type="Area3D" parent="XROrigin3D/RightHand/GrabFunction"]
 collision_layer = 131072

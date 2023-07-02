@@ -18,6 +18,18 @@ var grip_pressed : bool = false
 
 @onready var dblabel : Label3D = $Label3D
 
+# Collision Layer and Mask for picked up objects
+@export_flags_3d_physics var picked_up_layers
+@export_flags_3d_physics var picked_up_mask
+
+
+
+#Remember previous collision mask and layer
+@onready var original_collision_layer : int
+@onready var original_collision_mask : int
+
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	dblabel.text = "ready"
@@ -39,10 +51,20 @@ func _on_grip_pressed():
 	if closest_object:
 		joint.node_b = closest_object.get_path()
 		picked_up_object = closest_object
+		original_collision_layer = picked_up_object.collision_layer
+		original_collision_mask = picked_up_object.collision_mask
+		picked_up_object.set_layer_mask(picked_up_layers)
+		picked_up_object.set_collision_mask(picked_up_mask)
+		
+		
+		
 	
 func _on_grip_release():
 	if picked_up_object:
 		joint.node_b = ""
+		picked_up_object.set_layer_mask(original_collision_layer)
+		picked_up_object.set_collision_mask(original_collision_mask)
+		
 		picked_up_object = null
 
 
