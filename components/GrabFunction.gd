@@ -16,9 +16,11 @@ var grip_pressed : bool = false
 ## Grip threshold (from configuration)
 @onready var _grip_threshold : float = XRTools.get_grip_threshold()
 
+@onready var dblabel : Label3D = $Label3D
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	dblabel.text = "ready"
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -45,8 +47,11 @@ func _on_grip_release():
 
 
 func _on_area_3d_body_entered(body):
+	dblabel.text = "body entered"
 	if body.get_class() == "RigidBody3D":
+		dblabel.text = "body entered + RigidBody"
 		closest_object = body
+	
 
 
 
