@@ -103,6 +103,7 @@ strafe = true
 [node name="LeftPhysicsHand" parent="XROrigin3D/LeftHand" instance=ExtResource("6_ceevb")]
 
 [node name="GrabFunction" parent="XROrigin3D/LeftHand" instance=ExtResource("7_cc430")]
+transform = Transform3D(1, 0, 0, 0, 0.999991, 0.00413642, 0, -0.00413642, 0.999991, 0, -0.054, 0.113)
 
 [node name="RightHand" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
