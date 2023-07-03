@@ -22,7 +22,6 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-492, 104.638)
 flags/particle_trails = true
 nodes/fragment/0/position = Vector2(220, 100)
 nodes/fragment/2/node = SubResource("VisualShaderNodeColorConstant_gct2u")
