@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://dyrsuxjp64gme"]
+
+[ext_resource type="Script" path="res://scripts/Spawner.gd" id="1_cgbid"]
+[ext_resource type="PackedScene" uid="uid://v6tatf78qgf8" path="res://scenes/square_base.tscn" id="2_qdlha"]
+[ext_resource type="PackedScene" uid="uid://c0te0uofm7c26" path="res://scenes/v2phys_joint.tscn" id="3_jom8j"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_vqhdh"]
+size = Vector3(0.5, 0.5, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wlb7w"]
+transparency = 1
+blend_mode = 1
+cull_mode = 1
+no_depth_test = true
+albedo_color = Color(0, 0.27451, 0.27451, 1)
+roughness = 0.0
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_44kxr"]
+points = PackedVector3Array(0.25, 0.25, 0.5, 0.25, -0.25, 0.5, 0.25, 0.25, -0.5, -0.25, 0.25, 0.5, -0.25, -0.25, 0.5, 0.25, -0.25, -0.5, -0.25, 0.25, -0.5, -0.25, -0.25, -0.5)
+
+[node name="Spawner" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.448343, 0)
+mesh = SubResource("BoxMesh_vqhdh")
+surface_material_override/0 = SubResource("StandardMaterial3D_wlb7w")
+script = ExtResource("1_cgbid")
+
+[node name="SquareBase" parent="." instance=ExtResource("2_qdlha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.2)
+metadata/Scene = ExtResource("2_qdlha")
+
+[node name="Joint" parent="." instance=ExtResource("3_jom8j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.000345916, -0.2)
+gravity_scale = 0.0
+metadata/Scene = ExtResource("3_jom8j")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 65536
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("ConvexPolygonShape3D_44kxr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

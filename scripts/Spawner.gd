@@ -18,14 +18,25 @@ func _ready():
 			i.freeze = false
 			
 
-
+func handle_new_object(object):
+	var attachmentPoint = object.get_meta("attachmentPoint")
+	object.set_transform(attachmentPoint.transform)
+	attachmentPoint.node_b = get_path_to(object)
+	object.freeze = false
 
 
 func _on_area_3d_body_exited(body: Node3D):
 	if body.get_meta("attachedToSpawner"):
+		var duplicateObject : RigidBody3D = load(body.get_meta("Scene")).instantiate()
 		var attachmentPoint = body.get_meta("attachmentPoint")
-		attachmentPoint.queue_free()
+		duplicateObject.set_meta("attachmentPoint", attachmentPoint)
+		duplicateObject.freeze = true
+		duplicateObject.set_gravity_scale(0.0)
+		duplicateObject.connect("tree_entered", handle_new_object(duplicateObject))
+		
+		attachmentPoint.node_b = ""
 		body.set_meta("attachedToSpawner", false)
 		body.set_gravity_scale(1.0)
 		body.set_collision_layer(pow(2, 3-1))
 		body.reparent(root_node)
+		add_child(duplicateObject)
