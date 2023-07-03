@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://v6tatf78qgf8"]
 
-[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_ga4qi"]
+[ext_resource type="Script" path="res://addons/godot-xr-tools/objects/pickable.gd" id="1_ugdpp"]
 [ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="2_85mch"]
 [ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="3_vmmgm"]
 
@@ -15,25 +15,25 @@ albedo_color = Color(0.211765, 0.211765, 0.211765, 1)
 metallic = 0.42
 roughness = 0.0
 
-[node name="SquareBase" type="Node3D"]
-
-[node name="PickableObject" parent="." instance=ExtResource("1_ga4qi")]
+[node name="PickableObject" type="RigidBody3D"]
+collision_layer = 4
+collision_mask = 196615
 mass = 1.62
 continuous_cd = true
+freeze_mode = 1
+script = ExtResource("1_ugdpp")
 ranged_grab_method = 2
 
-[node name="CollisionShape3D" parent="PickableObject" index="0"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_xtx0k")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="PickableObject"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_3o4e3")
 skeleton = NodePath("../..")
 surface_material_override/0 = SubResource("StandardMaterial3D_32p8q")
 
-[node name="GrabPointHandLeft" parent="PickableObject" instance=ExtResource("2_85mch")]
+[node name="GrabPointHandLeft" parent="." instance=ExtResource("2_85mch")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0511363, 0, -0.0759867)
 
-[node name="GrabPointHandRight" parent="PickableObject" instance=ExtResource("3_vmmgm")]
+[node name="GrabPointHandRight" parent="." instance=ExtResource("3_vmmgm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0501084, 0, -0.0780281)
-
-[editable path="PickableObject"]

@@ -40,9 +40,11 @@ surface_material_override/0 = SubResource("StandardMaterial3D_wlb7w")
 script = ExtResource("2_hpdqn")
 
 [node name="SquareBase" parent="Spawner" instance=ExtResource("2_3kfaw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.341086)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.2)
 
 [node name="Joint" parent="Spawner" instance=ExtResource("3_5wex0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.000345916, -0.2)
+gravity_scale = 0.0
 
 [node name="Area3D" type="Area3D" parent="Spawner"]
 collision_layer = 0
@@ -50,6 +52,8 @@ collision_mask = 65536
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Spawner/Area3D"]
 shape = SubResource("ConvexPolygonShape3D_44kxr")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Spawner"]
 
 [connection signal="body_exited" from="Spawner/Area3D" to="Spawner" method="_on_area_3d_body_exited"]
 
