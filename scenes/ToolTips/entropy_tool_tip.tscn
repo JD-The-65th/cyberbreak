@@ -23,7 +23,8 @@ shape = SubResource("ConvexPolygonShape3D_1v0ys")
 
 [node name="toolTip" parent="." instance=ExtResource("1_jo6w5")]
 
-[node name="Spawner" parent="." instance=ExtResource("2_3tuem")]
+[node name="Spawner" parent="." node_paths=PackedStringArray("jointTarget") instance=ExtResource("2_3tuem")]
 surface_material_override/0 = SubResource("StandardMaterial3D_8krjr")
+jointTarget = NodePath("..")
 
 [editable path="toolTip"]
