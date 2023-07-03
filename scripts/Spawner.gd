@@ -9,10 +9,10 @@ func _ready():
 		if i.get_class() == "RigidBody3D":
 			i.freeze = true
 			i.set_gravity_scale(0.0)
-			var attachmentPoint : Generic6DOFJoint3D = Generic6DOFJoint3D.new()
+			var attachmentPoint : PinJoint3D = PinJoint3D.new()
 			attachmentPoint.set_transform(i.transform)
-			attachmentPoint.node_a = get_path_to($StaticBody3D)
-			attachmentPoint.node_b = get_path_to(i)
+			#attachmentPoint.node_a = get_path_to($StaticBody3D)
+			#attachmentPoint.node_b = get_path_to(i)
 			add_child(attachmentPoint)
 			i.set_meta("attachmentPoint", attachmentPoint)
 			i.set_meta("attachedToSpawner", true)
@@ -24,7 +24,7 @@ func handle_object(object):
 	var attachmentPoint = object.get_meta("attachmentPoint")
 	
 	object.set_transform(attachmentPoint.transform)
-	attachmentPoint.node_b = get_path_to(object)
+	#attachmentPoint.node_b = get_path_to(object)
 	object.freeze = false
 	object.set_meta("attachedToSpawner", true)
 
@@ -38,7 +38,7 @@ func _on_area_3d_body_exited(body: Node3D):
 		duplicateObject.set_gravity_scale(0.0)
 		var param = body.name
 		
-		attachmentPoint.node_b = ""
+		#attachmentPoint.node_b = ""
 		body.set_meta("attachedToSpawner", false)
 		body.set_gravity_scale(1.0)
 		body.set_collision_layer(pow(2, 3-1))
