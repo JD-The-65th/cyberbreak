@@ -33,7 +33,9 @@ albedo_texture = ExtResource("1_y1pph")
 uv1_triplanar = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_slpun"]
+lightmap_size_hint = Vector2i(1004, 526)
 material = SubResource("StandardMaterial3D_2e21p")
+add_uv2 = true
 size = Vector3(100, 2, 100)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_e1ojm"]
@@ -43,12 +45,16 @@ absorbent = true
 data = PackedVector3Array(-50, 1, 50, 50, 1, 50, -50, -1, 50, 50, 1, 50, 50, -1, 50, -50, -1, 50, 50, 1, -50, -50, 1, -50, 50, -1, -50, -50, 1, -50, -50, -1, -50, 50, -1, -50, 50, 1, 50, 50, 1, -50, 50, -1, 50, 50, 1, -50, 50, -1, -50, 50, -1, 50, -50, 1, -50, -50, 1, 50, -50, -1, -50, -50, 1, 50, -50, -1, 50, -50, -1, -50, 50, 1, 50, -50, 1, 50, 50, 1, -50, -50, 1, 50, -50, 1, -50, 50, 1, -50, -50, -1, 50, 50, -1, 50, -50, -1, -50, 50, -1, 50, 50, -1, -50, -50, -1, -50)
 
 [sub_resource type="BoxMesh" id="BoxMesh_wrg6n"]
+lightmap_size_hint = Vector2i(26, 56)
+add_uv2 = true
 size = Vector3(4, 3, 0.5)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_lbnb3"]
 data = PackedVector3Array(-2, 1.5, 0.25, 2, 1.5, 0.25, -2, -1.5, 0.25, 2, 1.5, 0.25, 2, -1.5, 0.25, -2, -1.5, 0.25, 2, 1.5, -0.25, -2, 1.5, -0.25, 2, -1.5, -0.25, -2, 1.5, -0.25, -2, -1.5, -0.25, 2, -1.5, -0.25, 2, 1.5, 0.25, 2, 1.5, -0.25, 2, -1.5, 0.25, 2, 1.5, -0.25, 2, -1.5, -0.25, 2, -1.5, 0.25, -2, 1.5, -0.25, -2, 1.5, 0.25, -2, -1.5, -0.25, -2, 1.5, 0.25, -2, -1.5, 0.25, -2, -1.5, -0.25, 2, 1.5, 0.25, -2, 1.5, 0.25, 2, 1.5, -0.25, -2, 1.5, 0.25, -2, 1.5, -0.25, 2, 1.5, -0.25, -2, -1.5, 0.25, 2, -1.5, 0.25, -2, -1.5, -0.25, 2, -1.5, 0.25, 2, -1.5, -0.25, -2, -1.5, -0.25)
 
 [sub_resource type="BoxMesh" id="BoxMesh_t15mw"]
+lightmap_size_hint = Vector2i(26, 46)
+add_uv2 = true
 size = Vector3(4, 2, 0.5)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ejfl3"]
@@ -60,7 +66,8 @@ data = PackedVector3Array(-2, 1, 0.25, 2, 1, 0.25, -2, -1, 0.25, 2, 1, 0.25, 2, 
 environment = SubResource("Environment_tjlfa")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.433013, 0.250001, -0.392572, 0.898515, 0.196364, -0.309657, 0.0719127, -0.948125, 0, 0, 0)
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0.472865, -0.871775, 0.128091, 0.162478, 0.229146, 0.959736, 0, 0, 0)
+light_bake_mode = 1
 shadow_enabled = true
 directional_shadow_mode = 1
 
