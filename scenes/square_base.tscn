@@ -15,7 +15,7 @@ albedo_color = Color(0.211765, 0.211765, 0.211765, 1)
 metallic = 0.42
 roughness = 0.0
 
-[node name="PickableObject" type="RigidBody3D"]
+[node name="SquareBase" type="RigidBody3D"]
 collision_layer = 4
 collision_mask = 196615
 mass = 1.62
@@ -23,6 +23,7 @@ continuous_cd = true
 freeze_mode = 1
 script = ExtResource("1_ugdpp")
 ranged_grab_method = 2
+metadata/Scene = "res://scenes/square_base.tscn"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_xtx0k")
