@@ -83,7 +83,6 @@ physics_material_override = SubResource("PhysicsMaterial_e1ojm")
 shape = SubResource("ConcavePolygonShape3D_o5pmh")
 
 [node name="StartXR" parent="." instance=ExtResource("2_nq5sa")]
-target_refresh_rate = 0.0
 
 [node name="XROrigin3D" type="XROrigin3D" parent="."]
 current = true
@@ -120,8 +119,6 @@ teleport_button_action = "primary_click"
 
 [node name="GrabFunction" parent="XROrigin3D/RightHand" instance=ExtResource("7_cc430")]
 picked_up_mask = 196615
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="XROrigin3D/RightHand/GrabFunction"]
 
 [node name="PlayerBody" parent="XROrigin3D" instance=ExtResource("8_jgb4u")]
 
