@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://lh57dcb6lu25"]
+
+[ext_resource type="PackedScene" uid="uid://bb0r8euh8vc0r" path="res://models/toolTip.glb" id="1_jo6w5"]
+[ext_resource type="PackedScene" uid="uid://v6tatf78qgf8" path="res://scenes/square_base.tscn" id="2_3kfaw"]
+[ext_resource type="Script" path="res://scripts/Spawner.gd" id="2_hpdqn"]
+[ext_resource type="PackedScene" uid="uid://c0te0uofm7c26" path="res://scenes/v2phys_joint.tscn" id="3_5wex0"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1v0ys"]
+points = PackedVector3Array(0.0251794, 0.0186736, -0.00095938, -0.0251287, -0.0205741, -0.000960905, -0.0251116, -0.020557, 0.00104911, -0.0188659, 0.031919, -0.00205344, -0.00205899, 0.0245527, 0.0252551, 0.0180485, -0.0224062, 0.018045, 0.00811022, -0.0195993, -0.0241531, -0.0104625, 0.0235126, -0.0241172, 0.0168514, 0.0287592, -0.0167643, -0.0179381, -0.0193817, 0.0190259, 0.0221789, -0.0235682, -0.0100161, 0.0168514, 0.0287592, 0.0168532, -0.0141309, -0.0257761, -0.0161549, -0.024122, 0.0214127, 0.0115982, -0.024122, 0.0214127, -0.0115093, -0.000966322, -0.0257658, 0.0212961, -0.0010047, 0.0382254, -0.00205344, -0.017987, -0.0194469, -0.0189886, 0.0179057, 0.0224528, -0.0199163, -0.00941331, 0.0308657, 0.0189511, 0.0241602, -0.0195128, 0.00807982, 0.00305666, -0.0164771, 0.0251397, 0.0189548, 0.0235061, 0.0189511, 0.00919533, -0.0279344, -0.00706986, -0.016157, -0.0267986, 0.00915472, -0.0104625, 0.0224594, 0.0242061, 0.00214274, 0.0245527, -0.0251662, -0.00197563, -0.0196196, -0.0251793, 0.0189548, 0.0319124, 0.00214233, -0.00941331, 0.0308657, -0.0188622, 0.0105514, 0.0224528, 0.0242061, 0.0242108, 0.0224528, -0.0104604)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vqhdh"]
+size = Vector3(0.5, 0.5, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wlb7w"]
+transparency = 1
+blend_mode = 1
+cull_mode = 1
+no_depth_test = true
+albedo_color = Color(0, 0.27451, 0.27451, 1)
+roughness = 0.0
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_44kxr"]
+points = PackedVector3Array(0.25, 0.25, 0.5, 0.25, -0.25, 0.5, 0.25, 0.25, -0.5, -0.25, 0.25, 0.5, -0.25, -0.25, 0.5, 0.25, -0.25, -0.5, -0.25, 0.25, -0.5, -0.25, -0.25, -0.5)
+
+[node name="Entropy ToolTip" type="RigidBody3D"]
+collision_layer = 256
+collision_mask = 720903
+mass = 0.03
+gravity_scale = 0.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_1v0ys")
+
+[node name="toolTip" parent="." instance=ExtResource("1_jo6w5")]
+
+[node name="Spawner" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.448343, 0)
+mesh = SubResource("BoxMesh_vqhdh")
+surface_material_override/0 = SubResource("StandardMaterial3D_wlb7w")
+script = ExtResource("2_hpdqn")
+
+[node name="SquareBase" parent="Spawner" instance=ExtResource("2_3kfaw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.341086)
+
+[node name="Joint" parent="Spawner" instance=ExtResource("3_5wex0")]
+
+[node name="Area3D" type="Area3D" parent="Spawner"]
+collision_layer = 0
+collision_mask = 65536
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Spawner/Area3D"]
+shape = SubResource("ConvexPolygonShape3D_44kxr")
+
+[connection signal="body_exited" from="Spawner/Area3D" to="Spawner" method="_on_area_3d_body_exited"]
+
+[editable path="toolTip"]
