@@ -1,18 +1,22 @@
-[gd_scene load_steps=19 format=3 uid="uid://c1sf2cab6jct7"]
+[gd_scene load_steps=24 format=3 uid="uid://c1sf2cab6jct7"]
 
 [ext_resource type="Texture2D" uid="uid://b7qnw50peaqjp" path="res://addons/kenney_prototype_textures/dark/texture_08.png" id="1_y1pph"]
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="2_nq5sa"]
 [ext_resource type="PackedScene" path="res://addons/godot-xr-tools/misc/vr_common_shader_cache.tscn" id="3_mmq56"]
-[ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="4_trjg1"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="5_7v6s5"]
 [ext_resource type="PackedScene" uid="uid://ddsj74hpt1kgb" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_physics_tac_glove.tscn" id="6_ceevb"]
+[ext_resource type="PackedScene" uid="uid://cxlfmvplssqp8" path="res://components/grab_function.tscn" id="7_cc430"]
 [ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="7_fvlwf"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="8_jgb4u"]
 [ext_resource type="PackedScene" uid="uid://b6xesntm4qeo5" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_physics_tac_glove.tscn" id="9_1yrn1"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="9_b02xp"]
 [ext_resource type="PackedScene" uid="uid://v6tatf78qgf8" path="res://scenes/square_base.tscn" id="9_tbnho"]
+[ext_resource type="PackedScene" uid="uid://c0te0uofm7c26" path="res://scenes/v2phys_joint.tscn" id="13_1ycmv"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_gx25x"]
+rayleigh_color = Color(0, 0.282353, 0.521569, 1)
+mie_coefficient = 0.04
+mie_color = Color(0.596078, 0, 0.576471, 1)
 
 [sub_resource type="Sky" id="Sky_6p37l"]
 sky_material = SubResource("PhysicalSkyMaterial_gx25x")
@@ -37,25 +41,37 @@ absorbent = true
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_o5pmh"]
 data = PackedVector3Array(-50, 1, 50, 50, 1, 50, -50, -1, 50, 50, 1, 50, 50, -1, 50, -50, -1, 50, 50, 1, -50, -50, 1, -50, 50, -1, -50, -50, 1, -50, -50, -1, -50, 50, -1, -50, 50, 1, 50, 50, 1, -50, 50, -1, 50, 50, 1, -50, 50, -1, -50, 50, -1, 50, -50, 1, -50, -50, 1, 50, -50, -1, -50, -50, 1, 50, -50, -1, 50, -50, -1, -50, 50, 1, 50, -50, 1, 50, 50, 1, -50, -50, 1, 50, -50, 1, -50, 50, 1, -50, -50, -1, 50, 50, -1, 50, -50, -1, -50, 50, -1, 50, 50, -1, -50, -50, -1, -50)
 
+[sub_resource type="BoxMesh" id="BoxMesh_wrg6n"]
+size = Vector3(4, 3, 0.5)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_lbnb3"]
+data = PackedVector3Array(-2, 1.5, 0.25, 2, 1.5, 0.25, -2, -1.5, 0.25, 2, 1.5, 0.25, 2, -1.5, 0.25, -2, -1.5, 0.25, 2, 1.5, -0.25, -2, 1.5, -0.25, 2, -1.5, -0.25, -2, 1.5, -0.25, -2, -1.5, -0.25, 2, -1.5, -0.25, 2, 1.5, 0.25, 2, 1.5, -0.25, 2, -1.5, 0.25, 2, 1.5, -0.25, 2, -1.5, -0.25, 2, -1.5, 0.25, -2, 1.5, -0.25, -2, 1.5, 0.25, -2, -1.5, -0.25, -2, 1.5, 0.25, -2, -1.5, 0.25, -2, -1.5, -0.25, 2, 1.5, 0.25, -2, 1.5, 0.25, 2, 1.5, -0.25, -2, 1.5, 0.25, -2, 1.5, -0.25, 2, 1.5, -0.25, -2, -1.5, 0.25, 2, -1.5, 0.25, -2, -1.5, -0.25, 2, -1.5, 0.25, 2, -1.5, -0.25, -2, -1.5, -0.25)
+
+[sub_resource type="BoxMesh" id="BoxMesh_t15mw"]
+size = Vector3(4, 2, 0.5)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ejfl3"]
+data = PackedVector3Array(-2, 1, 0.25, 2, 1, 0.25, -2, -1, 0.25, 2, 1, 0.25, 2, -1, 0.25, -2, -1, 0.25, 2, 1, -0.25, -2, 1, -0.25, 2, -1, -0.25, -2, 1, -0.25, -2, -1, -0.25, 2, -1, -0.25, 2, 1, 0.25, 2, 1, -0.25, 2, -1, 0.25, 2, 1, -0.25, 2, -1, -0.25, 2, -1, 0.25, -2, 1, -0.25, -2, 1, 0.25, -2, -1, -0.25, -2, 1, 0.25, -2, -1, 0.25, -2, -1, -0.25, 2, 1, 0.25, -2, 1, 0.25, 2, 1, -0.25, -2, 1, 0.25, -2, 1, -0.25, 2, 1, -0.25, -2, -1, 0.25, 2, -1, 0.25, -2, -1, -0.25, 2, -1, 0.25, 2, -1, -0.25, -2, -1, -0.25)
+
 [node name="Testing Environment" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_tjlfa")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+transform = Transform3D(-0.866025, -0.433013, 0.25, -0.129342, 0.676994, 0.724534, -0.482981, 0.595129, -0.642301, 0, 0, 0)
 shadow_enabled = true
 directional_shadow_mode = 1
 
-[node name="Floor2" type="MeshInstance3D" parent="."]
+[node name="Floor" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.1, 0)
 mesh = SubResource("BoxMesh_slpun")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Floor2"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor"]
 physics_material_override = SubResource("PhysicsMaterial_e1ojm")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor2/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_o5pmh")
 
 [node name="StartXR" parent="." instance=ExtResource("2_nq5sa")]
@@ -73,18 +89,16 @@ current = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
 tracker = &"left_hand"
 
-[node name="FunctionPickup" parent="XROrigin3D/LeftHand" instance=ExtResource("4_trjg1")]
-
 [node name="MovementDirect" parent="XROrigin3D/LeftHand" instance=ExtResource("5_7v6s5")]
 strafe = true
 
 [node name="LeftPhysicsHand" parent="XROrigin3D/LeftHand" instance=ExtResource("6_ceevb")]
 
+[node name="GrabFunction" parent="XROrigin3D/LeftHand" instance=ExtResource("7_cc430")]
+
 [node name="RightHand" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
 tracker = &"right_hand"
-
-[node name="FunctionPickup" parent="XROrigin3D/RightHand" instance=ExtResource("4_trjg1")]
 
 [node name="FunctionTeleport" parent="XROrigin3D/RightHand" instance=ExtResource("7_fvlwf")]
 valid_teleport_mask = 4291100657
@@ -94,10 +108,33 @@ teleport_button_action = "primary_click"
 
 [node name="RightPhysicsHand" parent="XROrigin3D/RightHand" instance=ExtResource("9_1yrn1")]
 
+[node name="GrabFunction" parent="XROrigin3D/RightHand" instance=ExtResource("7_cc430")]
+
 [node name="PlayerBody" parent="XROrigin3D" instance=ExtResource("8_jgb4u")]
 
 [node name="SquareBase" parent="." instance=ExtResource("9_tbnho")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.0625, -2.53577)
 
-[node name="SquareBase2" parent="." instance=ExtResource("9_tbnho")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.0625, -2.53577)
+[node name="Wall" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.70755, 1.4, -3.06624)
+mesh = SubResource("BoxMesh_wrg6n")
+skeleton = NodePath("")
+
+[node name="Wall" type="StaticBody3D" parent="Wall"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall/Wall"]
+shape = SubResource("ConcavePolygonShape3D_lbnb3")
+
+[node name="Wall2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.70755, 0.9, 2.93376)
+mesh = SubResource("BoxMesh_t15mw")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_ejfl3")
+
+[node name="Joint" parent="." instance=ExtResource("13_1ycmv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.59452)
+collision_mask = 7

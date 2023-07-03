@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="CyberBreak"
+config/description="CyberBreak is a Physics based VR Game about breaking the rules and making creations to escape the simulation."
 run/main_scene="res://levels/testing_environment.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 config/icon="res://icon.svg"
@@ -18,6 +19,10 @@ config/icon="res://icon.svg"
 [autoload]
 
 XRToolsUserSettings="*res://addons/godot-xr-tools/user_settings/user_settings.gd"
+
+[display]
+
+window/vsync/vsync_mode=0
 
 [layer_names]
 
@@ -33,8 +38,9 @@ XRToolsUserSettings="*res://addons/godot-xr-tools/user_settings/user_settings.gd
 
 [physics]
 
+3d/run_on_separate_thread=true
 common/physics_ticks_per_second=72
-common/max_physics_steps_per_frame=12
+common/max_physics_steps_per_frame=16
 
 [rendering]
 
