@@ -4,7 +4,7 @@
 [ext_resource type="Shader" path="res://materials/testHolo.gdshader" id="2_o754m"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_f1w41"]
-radius = 0.072024
+radius = 0.075
 
 [sub_resource type="BoxMesh" id="BoxMesh_2l1hh"]
 size = Vector3(0.01, 0.01, 0.01)
