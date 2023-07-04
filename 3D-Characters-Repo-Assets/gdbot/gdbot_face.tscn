@@ -346,6 +346,7 @@ offset_top = -144.0
 offset_right = 144.0
 offset_bottom = 144.0
 size_flags_horizontal = 4
+metadata/_edit_use_anchors_ = true
 
 [node name="RightEye" type="Sprite2D" parent="."]
 position = Vector2(45, -2)
