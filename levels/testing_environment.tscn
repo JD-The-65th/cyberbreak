@@ -1,13 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://c1sf2cab6jct7"]
+[gd_scene load_steps=19 format=3 uid="uid://c1sf2cab6jct7"]
 
 [ext_resource type="Texture2D" uid="uid://b7qnw50peaqjp" path="res://addons/kenney_prototype_textures/dark/texture_08.png" id="1_y1pph"]
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="2_nq5sa"]
 [ext_resource type="PackedScene" uid="uid://cmo5ssdte7tsp" path="res://scenes/xr_origin_3d.tscn" id="3_mg21i"]
-[ext_resource type="PackedScene" uid="uid://cy36aygvs66pn" path="res://3D-Characters-Repo-Assets/gobot/gobot_skin.tscn" id="7_lbfua"]
-[ext_resource type="PackedScene" uid="uid://bdyptm7smjixm" path="res://3D-Characters-Repo-Assets/gdbot/gdbot_skin.tscn" id="8_kqoi5"]
+[ext_resource type="PackedScene" uid="uid://b5c0nr3os77h8" path="res://components/MSFS/msfs_particle_emitter.tscn" id="4_il5h1"]
 [ext_resource type="PackedScene" uid="uid://v6tatf78qgf8" path="res://scenes/square_base.tscn" id="9_tbnho"]
-[ext_resource type="PackedScene" uid="uid://482rxnrhe64v" path="res://3D-Characters-Repo-Assets/bee_bot/bee_bot_skin.tscn" id="9_yxvie"]
-[ext_resource type="PackedScene" uid="uid://bpjqcswabdtyb" path="res://3D-Characters-Repo-Assets/beetle_bot/beetlebot_skin.tscn" id="10_fx3ya"]
 [ext_resource type="PackedScene" uid="uid://c0te0uofm7c26" path="res://scenes/v2phys_joint.tscn" id="13_1ycmv"]
 [ext_resource type="PackedScene" uid="uid://lh57dcb6lu25" path="res://scenes/ToolTips/entropy_tool_tip.tscn" id="13_duwm2"]
 
@@ -83,6 +80,9 @@ shape = SubResource("ConcavePolygonShape3D_o5pmh")
 
 [node name="XROrigin3D" parent="." instance=ExtResource("3_mg21i")]
 
+[node name="MSFSParticleEmitter" parent="XROrigin3D/RightHand" index="4" instance=ExtResource("4_il5h1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0123885, -0.0685662, 0.0529872)
+
 [node name="SquareBase" parent="." instance=ExtResource("9_tbnho")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.0625, -2.53577)
 
@@ -112,14 +112,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.59452)
 [node name="Entropy ToolTip" parent="." instance=ExtResource("13_duwm2")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.71486, -1.363)
 
-[node name="GobotSkin" parent="." instance=ExtResource("7_lbfua")]
-transform = Transform3D(0.863492, 0, -0.504362, 0, 1, 0, 0.504362, 0, 0.863492, 1.31537, 0, -3.52093)
-
-[node name="GDbotSkin" parent="." instance=ExtResource("8_kqoi5")]
-transform = Transform3D(0.654015, 0, -0.756482, 0, 1, 0, 0.756482, 0, 0.654015, 3.19777, 0, -2.9537)
-
-[node name="BeebotSkin" parent="." instance=ExtResource("9_yxvie")]
-transform = Transform3D(-0.0154954, 0, -0.649815, 0, 0.65, 0, 0.649815, 0, -0.0154954, 2.64682, 1.45328, -0.601576)
-
-[node name="BeetlebotSkin" parent="." instance=ExtResource("10_fx3ya")]
-transform = Transform3D(0.315599, 0, -0.948893, 0, 1, 0, 0.948893, 0, 0.315599, 4.728, 0, 0)
+[editable path="XROrigin3D"]
