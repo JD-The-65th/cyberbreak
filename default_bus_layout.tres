@@ -1,0 +1,17 @@
+[gd_resource type="AudioBusLayout" load_steps=3 format=3 uid="uid://bk12r6yexvvhi"]
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_y7mbl"]
+resource_name = "Reverb"
+room_size = 0.25
+damping = 0.75
+wet = 0.33
+
+[sub_resource type="AudioEffectEQ6" id="AudioEffectEQ6_mp55x"]
+resource_name = "EQ6"
+band_db/3200_hz = 4.5
+
+[resource]
+bus/0/effect/0/effect = SubResource("AudioEffectReverb_y7mbl")
+bus/0/effect/0/enabled = true
+bus/0/effect/1/effect = SubResource("AudioEffectEQ6_mp55x")
+bus/0/effect/1/enabled = true
