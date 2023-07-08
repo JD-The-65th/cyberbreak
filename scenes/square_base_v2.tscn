@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://c740sbbh3hlax"]
+
+[ext_resource type="Shader" path="res://materials/testHolo.gdshader" id="1_v4xcx"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_k6inr"]
+size = Vector3(0.125, 0.125, 0.125)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cll1t"]
+render_priority = 0
+shader = ExtResource("1_v4xcx")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_vb0v3"]
+points = PackedVector3Array(-0.0625, -0.0625, -0.0625, 0.0625, 0.0625, 0.0625, 0.0625, -0.0625, 0.0625, 0.0625, 0.0625, -0.0625, -0.0625, 0.0625, 0.0625, 0.0625, -0.0625, -0.0625, -0.0625, -0.0625, 0.0625, -0.0625, 0.0625, -0.0625)
+
+[node name="SquareBase" type="RigidBody3D"]
+mass = 1.62
+continuous_cd = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_k6inr")
+surface_material_override/0 = SubResource("ShaderMaterial_cll1t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_vb0v3")
