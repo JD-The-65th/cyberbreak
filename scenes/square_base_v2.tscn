@@ -31,3 +31,6 @@ surface_material_override/0 = SubResource("ShaderMaterial_cll1t")
 shape = SubResource("ConvexPolygonShape3D_vb0v3")
 
 [node name="SnapZoneFace" parent="." instance=ExtResource("2_b7oka")]
+
+[connection signal="body_entered" from="SnapZoneFace" to="SnapZoneFace" method="_on_body_entered"]
+[connection signal="body_exited" from="SnapZoneFace" to="SnapZoneFace" method="_on_body_exited"]
