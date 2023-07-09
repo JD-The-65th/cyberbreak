@@ -6,6 +6,7 @@ class_name GrabFunction
 var closest_object : Node3D = null
 var picked_up_object : Node3D = null
 var grip_pressed : bool = false
+var snappable : bool = false
 
 ## Grip controller axis
 @export var pickup_axis_action : String = "grip"
@@ -50,6 +51,8 @@ func _on_grip_pressed():
 		original_collision_layer = picked_up_object.collision_layer
 		original_collision_mask = picked_up_object.collision_mask
 		picked_up_object.set_collision_layer(picked_up_layers)
+		if snappable:
+			picked_up_object.physics_layer += pow(2, 12-1)
 		picked_up_object.set_collision_mask(picked_up_mask)
 		
 		
