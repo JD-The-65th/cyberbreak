@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cmo5ssdte7tsp"]
+[gd_scene load_steps=13 format=3 uid="uid://cmo5ssdte7tsp"]
 
 [ext_resource type="PackedScene" path="res://addons/godot-xr-tools/misc/vr_common_shader_cache.tscn" id="1_af6c4"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="2_gjfns"]
@@ -8,8 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="6_b3hsq"]
 [ext_resource type="PackedScene" uid="uid://b6xesntm4qeo5" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_physics_tac_glove.tscn" id="7_8ghvb"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="8_t4vmy"]
-[ext_resource type="PackedScene" uid="uid://c260lugnyabe1" path="res://components/state_machine_component.tscn" id="9_8xsx1"]
+[ext_resource type="Script" path="res://scripts/stateMachineStuff/PlayMode.gd" id="10_djynx"]
 [ext_resource type="Script" path="res://components/state_machine_component.gd" id="10_nwkhs"]
+[ext_resource type="Script" path="res://scripts/stateMachineStuff/BuildMode.gd" id="11_rdasi"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hbmkj"]
 radius = 0.2
@@ -57,7 +58,16 @@ picked_up_mask = 196615
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 shape = SubResource("CapsuleShape3D_hbmkj")
 
-[node name="StateMachineComponent" parent="." instance=ExtResource("9_8xsx1")]
+[node name="StateMachineComponent" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("10_nwkhs")
+initial_state = NodePath("PlayMode")
 
-[editable path="StateMachineComponent"]
+[node name="PlayMode" type="Node" parent="StateMachineComponent" node_paths=PackedStringArray("settings_controller")]
+script = ExtResource("10_djynx")
+settings_controller = NodePath("../../LeftHand")
+
+[node name="BuildMode" type="Node" parent="StateMachineComponent" node_paths=PackedStringArray("left_grab_function", "right_grab_function", "settings_controller")]
+script = ExtResource("11_rdasi")
+left_grab_function = NodePath("../../LeftHand/GrabFunction")
+right_grab_function = NodePath("../../RightHand/GrabFunction")
+settings_controller = NodePath("../../LeftHand")

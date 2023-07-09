@@ -63,6 +63,8 @@ func _on_grip_release():
 		joint.node_b = ""
 		picked_up_object.set_collision_layer(original_collision_layer)
 		picked_up_object.set_collision_mask(original_collision_mask)
+		if snappable:
+			picked_up_object.emit_signal("snapped")
 		
 		picked_up_object = null
 

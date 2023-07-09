@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://ceoghya1eq8wg"]
+
+[ext_resource type="Script" path="res://components/SnapZone/SnapZoneFace.gd" id="1_44tn0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s7uvh"]
+size = Vector3(0.126282, 0.0990529, 0.123752)
+
+[node name="SnapZoneFace" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.065299, 0)
+collision_layer = 1024
+collision_mask = 2048
+script = ExtResource("1_44tn0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00776088, 0)
+shape = SubResource("BoxShape3D_s7uvh")
+
+[node name="Generic6DOFJoint3D" type="Generic6DOFJoint3D" parent="."]
+linear_limit_x/softness = 2.0
+linear_limit_y/softness = 2.0
+linear_limit_z/softness = 2.0

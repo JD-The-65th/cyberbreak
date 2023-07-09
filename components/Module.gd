@@ -5,3 +5,5 @@ signal snapped
 signal unsnapped
 
 signal scaled(new_scale: Vector3)
+
+
