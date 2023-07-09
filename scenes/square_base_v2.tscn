@@ -32,5 +32,30 @@ shape = SubResource("ConvexPolygonShape3D_vb0v3")
 
 [node name="SnapZoneFace" parent="." instance=ExtResource("2_b7oka")]
 
+[node name="SnapZoneFace2" parent="." instance=ExtResource("2_b7oka")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.0609693)
+
+[node name="SnapZoneFace3" parent="." instance=ExtResource("2_b7oka")]
+transform = Transform3D(1, 0, 0, 0, 1.31134e-07, 1, 0, -1, 1.31134e-07, 0, 0, -0.0632638)
+
+[node name="SnapZoneFace4" parent="." instance=ExtResource("2_b7oka")]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, -0.0628114, 0)
+
+[node name="SnapZoneFace5" parent="." instance=ExtResource("2_b7oka")]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, -0.060853, 0, 0)
+
+[node name="SnapZoneFace6" parent="." instance=ExtResource("2_b7oka")]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0.0588446, 0, 0)
+
 [connection signal="body_entered" from="SnapZoneFace" to="SnapZoneFace" method="_on_body_entered"]
 [connection signal="body_exited" from="SnapZoneFace" to="SnapZoneFace" method="_on_body_exited"]
+[connection signal="body_entered" from="SnapZoneFace2" to="SnapZoneFace2" method="_on_body_entered"]
+[connection signal="body_exited" from="SnapZoneFace2" to="SnapZoneFace2" method="_on_body_exited"]
+[connection signal="body_entered" from="SnapZoneFace3" to="SnapZoneFace3" method="_on_body_entered"]
+[connection signal="body_exited" from="SnapZoneFace3" to="SnapZoneFace3" method="_on_body_exited"]
+[connection signal="body_entered" from="SnapZoneFace4" to="SnapZoneFace4" method="_on_body_entered"]
+[connection signal="body_exited" from="SnapZoneFace4" to="SnapZoneFace4" method="_on_body_exited"]
+[connection signal="body_entered" from="SnapZoneFace5" to="SnapZoneFace5" method="_on_body_entered"]
+[connection signal="body_exited" from="SnapZoneFace5" to="SnapZoneFace5" method="_on_body_exited"]
+[connection signal="body_entered" from="SnapZoneFace6" to="SnapZoneFace6" method="_on_body_entered"]
+[connection signal="body_exited" from="SnapZoneFace6" to="SnapZoneFace6" method="_on_body_exited"]
