@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1br688lqb6qc"]
+
+[ext_resource type="Script" path="res://components/MSFS/MSFSPubSub.gd" id="1_tr3pv"]
+
+[node name="MSFSPubSub" type="Node"]
+script = ExtResource("1_tr3pv")
