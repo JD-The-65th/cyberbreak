@@ -7,7 +7,7 @@ var closest_object
 
 func _ready():
 	if connect_to:
-		$Generic6DOFJoint3D.node_a = connect_to
+		$Generic6DOFJoint3D.node_a = get_path_to(connect_to)
 
 func _on_body_entered(body):
 	body.connect("snapped", register_snap)
