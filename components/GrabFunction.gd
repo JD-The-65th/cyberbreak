@@ -50,9 +50,10 @@ func _on_grip_pressed():
 		picked_up_object = closest_object
 		original_collision_layer = picked_up_object.collision_layer
 		original_collision_mask = picked_up_object.collision_mask
-		picked_up_object.set_collision_layer(picked_up_layers)
 		if snappable:
-			picked_up_object.physics_layer += pow(2, 12-1)
+			picked_up_object.set_collision_layer(picked_up_layers + pow(2, 12-1))
+		else:
+			picked_up_object.set_collision_layer(picked_up_layers)
 		picked_up_object.set_collision_mask(picked_up_mask)
 		
 		
