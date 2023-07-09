@@ -21,6 +21,6 @@ func _on_body_exited(body):
 
 func register_snap(object):
 	if object == closest_object:
-		$Generic6DOFJoint3D.node_a = object
+		$Generic6DOFJoint3D.node_b = get_path_to(object)
 	
 	
