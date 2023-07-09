@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cmo5ssdte7tsp"]
+[gd_scene load_steps=12 format=3 uid="uid://cmo5ssdte7tsp"]
 
 [ext_resource type="PackedScene" path="res://addons/godot-xr-tools/misc/vr_common_shader_cache.tscn" id="1_af6c4"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="2_gjfns"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="6_b3hsq"]
 [ext_resource type="PackedScene" uid="uid://b6xesntm4qeo5" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_physics_tac_glove.tscn" id="7_8ghvb"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="8_t4vmy"]
+[ext_resource type="PackedScene" uid="uid://c260lugnyabe1" path="res://components/state_machine_component.tscn" id="9_8xsx1"]
+[ext_resource type="Script" path="res://components/state_machine_component.gd" id="10_nwkhs"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hbmkj"]
 radius = 0.2
@@ -54,3 +56,8 @@ picked_up_mask = 196615
 [node name="_CollisionShape3D_25031" type="CollisionShape3D" parent="PlayerBody"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 shape = SubResource("CapsuleShape3D_hbmkj")
+
+[node name="StateMachineComponent" parent="." instance=ExtResource("9_8xsx1")]
+script = ExtResource("10_nwkhs")
+
+[editable path="StateMachineComponent"]
