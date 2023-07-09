@@ -119,18 +119,9 @@ stream = ExtResource("8_dninl")
 autoplay = true
 
 [node name="SquareBase2" parent="." instance=ExtResource("9_uln35")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.22411, 0.00457695, -2.16892)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19893, 0.00457695, -2.16892)
 
 [node name="SquareBase3" parent="." instance=ExtResource("9_uln35")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.22411, 0.00457695, -1.5642)
-
-[node name="SquareBase4" parent="." instance=ExtResource("9_uln35")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.22411, 0.00457695, -3.02142)
-
-[node name="SquareBase5" parent="." instance=ExtResource("9_uln35")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.76129, 0.00457695, -3.02142)
-
-[node name="SquareBase6" parent="." instance=ExtResource("9_uln35")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.76129, 0.00457695, -2.0715)
 
 [editable path="XROrigin3D"]

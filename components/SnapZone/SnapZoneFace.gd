@@ -1,21 +1,21 @@
 extends Area3D
 
-@export var connect_to : CollisionObject3D
 
 var closest_object
 
 
-func _ready():
-	if connect_to:
-		$Generic6DOFJoint3D.node_a = get_path_to(connect_to)
 
 func _on_body_entered(body):
+	if body == get_parent():
+		return
 	body.connect("snapped", register_snap)
 	closest_object = body
 
 
 func _on_body_exited(body):
 	# TODO: No checking cuz I'm too tired to do so rn
+	if body == get_parent():
+		return
 	body.disconnect("snapped", register_snap)
 	closest_object = null
 
