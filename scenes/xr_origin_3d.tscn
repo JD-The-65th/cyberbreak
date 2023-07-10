@@ -42,7 +42,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
 tracker = &"right_hand"
 
 [node name="FunctionTeleport" parent="RightHand" instance=ExtResource("5_qd4yl")]
-valid_teleport_mask = 4291100657
+collision_mask = 255
+valid_teleport_mask = 4291096817
 teleport_button_action = "primary_click"
 
 [node name="MovementTurn" parent="RightHand" instance=ExtResource("6_b3hsq")]
