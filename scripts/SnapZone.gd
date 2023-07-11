@@ -15,7 +15,7 @@ func _ready():
 
 func snap_module(module: RigidBody3D):
 	#No sanity checking yet, jus gonna assume parent is a Joint
-	get_parent().node_b = get_path_to(module)
+	get_parent().node_a = get_path_to(module)
 	# Location Tracking
 	get_parent().set_flag_x(0, true)
 	get_parent().set_flag_y(0, true)

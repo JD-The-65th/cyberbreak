@@ -42,7 +42,7 @@ shape = SubResource("BoxShape3D_v61u0")
 
 [node name="Generic6DOFJoint3D" type="Generic6DOFJoint3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.065, 0)
-node_a = NodePath("..")
+node_b = NodePath("..")
 solver_priority = 2
 
 [node name="Area3D" type="Area3D" parent="Generic6DOFJoint3D"]
