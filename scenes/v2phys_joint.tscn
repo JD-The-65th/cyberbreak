@@ -1,8 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://c0te0uofm7c26"]
+[gd_scene load_steps=7 format=3 uid="uid://c0te0uofm7c26"]
 
+[ext_resource type="Script" path="res://components/Module.gd" id="1_vajgt"]
 [ext_resource type="Shader" path="res://materials/testHolo.gdshader" id="1_xw7l5"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2tnv4"]
+friction = 25.0
+absorbent = true
+
 [sub_resource type="SphereMesh" id="SphereMesh_bqam8"]
+lightmap_size_hint = Vector2i(3, 2)
 radius = 0.063
 height = 0.125
 
@@ -17,7 +23,9 @@ radius = 0.063
 collision_layer = 4
 collision_mask = 131079
 mass = 1.62
+physics_material_override = SubResource("PhysicsMaterial_2tnv4")
 continuous_cd = true
+script = ExtResource("1_vajgt")
 metadata/Scene = "res://scenes/v2phys_joint.tscn"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
