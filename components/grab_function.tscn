@@ -33,6 +33,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_28sid")
 
 [node name="Generic6DOFJoint3D" type="Generic6DOFJoint3D" parent="."]
 node_a = NodePath("..")
+solver_priority = 4
 linear_limit_x/softness = 2.0
 linear_limit_y/softness = 2.0
 linear_limit_z/softness = 2.0
