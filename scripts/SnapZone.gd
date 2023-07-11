@@ -14,14 +14,20 @@ func snap_module(module: RigidBody3D):
 
 
 func _on_body_entered(body: RigidBody3D):
+	if body == get_parent().get_parent(): #Janky as hell, but hey, it works
+		return
 	closest_module = body
 	body.connect("snapped", snap_module)
 
 
 
 func _on_body_exited(body: RigidBody3D):
+	if body == get_parent().get_parent(): #Janky as hell, but hey, it works
+		return
+		
 	if body == snapped_module:
 		return # I'll handle this later
 	elif body == closest_module:
 		closest_module = null
+		body.disconnect("snapped", snap_module)
 	return
