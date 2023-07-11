@@ -6,9 +6,11 @@ var snapped_module: RigidBody3D
 
 
 func snap_module(module: RigidBody3D):
-	if get_parent() == Joint3D:
-		get_parent().node_b = get_path_to(module)
-		snapped_module = module
+	#No sanity checking yet, jus gonna assume parent is a Joint
+	get_parent().node_b = get_path_to(module)
+	# We need to set Node A here since it dies funky stuff if we don't
+	get_parent().node_a = get_path_to(get_parent().get_parent()) # I know this path is insecure, just ignore it for now.
+	snapped_module = module
 
 
 func _on_body_entered(body: RigidBody3D):
