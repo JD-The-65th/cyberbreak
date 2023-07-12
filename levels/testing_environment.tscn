@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cmo5ssdte7tsp" path="res://scenes/xr_origin_3d.tscn" id="3_mg21i"]
 [ext_resource type="PackedScene" uid="uid://b5c0nr3os77h8" path="res://components/MSFS/msfs_particle_emitter.tscn" id="4_il5h1"]
 [ext_resource type="AudioStream" uid="uid://81cwh4y8n8m" path="res://music/unfa/rest/unfaRest.ogg" id="8_dninl"]
-[ext_resource type="PackedScene" uid="uid://cigui7230umnp" path="res://scenes/squaree_base_v_2.tscn" id="9_nkirg"]
+[ext_resource type="PackedScene" uid="uid://cigui7230umnp" path="res://scenes/square_base_v_2.tscn" id="9_nkirg"]
 [ext_resource type="PackedScene" uid="uid://v6tatf78qgf8" path="res://scenes/square_base.tscn" id="9_tbnho"]
 [ext_resource type="PackedScene" uid="uid://c0te0uofm7c26" path="res://scenes/v2phys_joint.tscn" id="13_1ycmv"]
 [ext_resource type="PackedScene" uid="uid://lh57dcb6lu25" path="res://scenes/ToolTips/entropy_tool_tip.tscn" id="13_duwm2"]
@@ -118,15 +118,15 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0.7
 stream = ExtResource("8_dninl")
 autoplay = true
 
-[node name="SquareeBaseV2" parent="." instance=ExtResource("9_nkirg")]
+[node name="SquareBaseV2" parent="." instance=ExtResource("9_nkirg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.31104, -0.0375001, -0.086975)
 continuous_cd = true
 
-[node name="SquareeBaseV3" parent="." instance=ExtResource("9_nkirg")]
+[node name="SquareBaseV2 1" parent="." instance=ExtResource("9_nkirg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75947, -0.0375001, -0.073068)
 continuous_cd = true
 
-[node name="SquareeBaseV4" parent="." instance=ExtResource("9_nkirg")]
+[node name="SquareBaseV2 2" parent="." instance=ExtResource("9_nkirg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.11104, -0.0375001, -0.086975)
 continuous_cd = true
 

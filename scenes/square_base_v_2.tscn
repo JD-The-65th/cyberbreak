@@ -1,24 +1,24 @@
 [gd_scene load_steps=7 format=3 uid="uid://cigui7230umnp"]
 
-[ext_resource type="Script" path="res://components/Module.gd" id="1_yj27o"]
-[ext_resource type="Shader" path="res://materials/testHolo.gdshader" id="2_v6qjx"]
-[ext_resource type="PackedScene" uid="uid://djkuj56cd8o36" path="res://components/snap_zone.tscn" id="3_0b1gl"]
+[ext_resource type="Script" path="res://components/Module.gd" id="1_j7oj7"]
+[ext_resource type="Shader" path="res://materials/testHolo.gdshader" id="2_17vki"]
+[ext_resource type="PackedScene" uid="uid://djkuj56cd8o36" path="res://components/snap_zone.tscn" id="3_g01w1"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_kbodm"]
 size = Vector3(0.125, 0.125, 0.125)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bx1vf"]
 render_priority = 0
-shader = ExtResource("2_v6qjx")
+shader = ExtResource("2_17vki")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v61u0"]
 size = Vector3(0.125, 0.125, 0.125)
 
-[node name="SquareeBaseV2" type="RigidBody3D"]
+[node name="SquareBaseV2" type="RigidBody3D"]
 collision_layer = 4
 collision_mask = 720903
 mass = 1.62
-script = ExtResource("1_yj27o")
+script = ExtResource("1_j7oj7")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_kbodm")
@@ -27,20 +27,22 @@ surface_material_override/0 = SubResource("ShaderMaterial_bx1vf")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_v61u0")
 
-[node name="SnapZone" parent="." instance=ExtResource("3_0b1gl")]
+[node name="SnapZone" parent="." instance=ExtResource("3_g01w1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.062, 0)
 
-[node name="SnapZone2" parent="." instance=ExtResource("3_0b1gl")]
+[node name="SnapZone2" parent="." instance=ExtResource("3_g01w1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.062, 0, 0)
 
-[node name="SnapZone3" parent="." instance=ExtResource("3_0b1gl")]
+[node name="SnapZone3" parent="." instance=ExtResource("3_g01w1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.062, 0, 0)
 
-[node name="SnapZone4" parent="." instance=ExtResource("3_0b1gl")]
+[node name="SnapZone4" parent="." instance=ExtResource("3_g01w1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.062, 0)
 
-[node name="SnapZone5" parent="." instance=ExtResource("3_0b1gl")]
+[node name="SnapZone5" parent="." instance=ExtResource("3_g01w1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.062)
 
-[node name="SnapZone6" parent="." instance=ExtResource("3_0b1gl")]
+[node name="SnapZone6" parent="." instance=ExtResource("3_g01w1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.062)
+
+[connection signal="grabbed" from="." to="SnapZone" method="_on_square_base_v_2_grabbed"]

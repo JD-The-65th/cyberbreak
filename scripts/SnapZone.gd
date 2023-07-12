@@ -5,14 +5,20 @@ var snapped_module: RigidBody3D
 
 var joint : Joint3D
 
+@export_enum("Generic", "Socket") var joint_type : String = "Generic"
+
 func snap_module(module: RigidBody3D):
 	#No sanity checking yet, jus gonna assume parent is a Module cuz why wouldn't it be
-	joint = get_parent().spawn_joint()
-	$RemoteTransform3D.remote_path = joint.get_path() 
+	joint = get_parent().spawn_joint(joint_type)
+	$RemoteTransform3D.remote_path = joint.get_path()
 	joint.node_a = get_parent().get_path()
 	joint.node_b = module.get_path()
 	snapped_module = module
 	module.disconnect("snapped", snap_module)
+	
+	# Configure Settings
+	if joint_type == "Generic":
+		pass
 	
 
 
@@ -41,3 +47,8 @@ func _on_body_exited(body: RigidBody3D):
 		closest_module = null
 		body.disconnect("snapped", snap_module)
 	return
+
+
+
+
+

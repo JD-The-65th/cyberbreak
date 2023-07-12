@@ -6,10 +6,16 @@ signal unsnapped
 
 signal scaled(new_scale: Vector3)
 
+
+## Signifies if the module is held or not
 var held : bool = false
 
 
-func spawn_joint(type: String = "Generic") -> Joint3D: ## Spawns a Physics Joint as a sibling and returns it.
+
+## Spawns a Physics Joint as a sibling and returns it.
+## Possible types are Generic and Socket (ConeTwistJoint3D.)
+## If the type is incorrect, it just returns a generic joint.
+func spawn_joint(type: String = "Generic") -> Joint3D: 
 	var joint = Joint3D
 	if type == "Socket":
 		joint = ConeTwistJoint3D.new()
@@ -19,3 +25,4 @@ func spawn_joint(type: String = "Generic") -> Joint3D: ## Spawns a Physics Joint
 	add_sibling(joint)
 	return joint
 	
+
