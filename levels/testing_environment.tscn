@@ -120,14 +120,11 @@ autoplay = true
 
 [node name="SquareBaseV2" parent="." instance=ExtResource("9_nkirg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.31104, -0.0375001, -0.086975)
-continuous_cd = true
 
 [node name="SquareBaseV2 1" parent="." instance=ExtResource("9_nkirg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75947, -0.0375001, -0.073068)
-continuous_cd = true
 
 [node name="SquareBaseV2 2" parent="." instance=ExtResource("9_nkirg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.11104, -0.0375001, -0.086975)
-continuous_cd = true
 
 [editable path="XROrigin3D"]
