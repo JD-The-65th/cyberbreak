@@ -21,8 +21,10 @@ func snap_module(module: RigidBody3D):
 	
 	# Configure Settings
 	if joint_type == "Generic":
-		pass
-		
+		# Set Location softness to be more rigid
+		joint.set_param_x(2, 2.0)
+		joint.set_param_y(2, 2.0)
+		joint.set_param_z(2, 2.0)
 	
 	
 
