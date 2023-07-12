@@ -52,7 +52,7 @@ transform = Transform3D(1.31134e-09, 2.62268e-09, -0.03, -4.52987e-09, -0.03, -2
 screen_size = Vector2(16, 9)
 viewport_size = Vector2(1152, 648)
 scene = ExtResource("6_5d6u7")
-collision_layer = 1179650
+collision_layer = 1048576
 
 [node name="Poke" parent="LeftHand" instance=ExtResource("7_70gaa")]
 
