@@ -44,6 +44,7 @@ icon_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="MainMenu" type="Panel" parent="."]
+visible = false
 layout_mode = 0
 anchor_left = 0.111111
 anchor_top = 0.0987654
