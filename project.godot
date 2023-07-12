@@ -14,6 +14,7 @@ config/name="CyberBreak"
 config/description="CyberBreak is a Physics based VR Game about breaking the rules and making creations to escape the simulation."
 run/main_scene="res://levels/testing_environment.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
+boot_splash/image="res://tempiconnobg.png"
 config/icon="res://icon.svg"
 
 [autoload]
