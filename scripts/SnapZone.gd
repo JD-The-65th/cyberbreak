@@ -9,6 +9,8 @@ var joint : Joint3D
 @export_enum("Generic", "Socket") var joint_type : String = "Generic"
 
 func snap_module(module: RigidBody3D):
+	if snapped_module:
+		return
 	#No sanity checking yet, jus gonna assume parent is a Module cuz why wouldn't it be
 	joint = get_parent().spawn_joint(joint_type)
 	$RemoteTransform3D.remote_path = joint.get_path()
