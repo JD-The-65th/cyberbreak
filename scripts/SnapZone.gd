@@ -63,9 +63,10 @@ func update_child_was_grabbed():
 	
 	
 func update_child_was_let_go():
-	if snapped_module is Module:
-		snapped_module.unregister_grab()
-		snapped_module.emit_signal("ungrabbed")
+	if snapped_module:
+		if snapped_module is Module:
+			snapped_module.unregister_grab()
+			snapped_module.emit_signal("ungrabbed")
 		
 	
 
