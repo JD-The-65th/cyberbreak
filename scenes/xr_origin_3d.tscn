@@ -27,7 +27,6 @@ current = true
 
 [node name="XRCamera3D" type="XRCamera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
-current = true
 
 [node name="VRCommonShaderCache" parent="XRCamera3D" instance=ExtResource("1_af6c4")]
 
@@ -53,7 +52,7 @@ transform = Transform3D(1.31134e-09, 2.62268e-09, -0.03, -4.52987e-09, -0.03, -2
 screen_size = Vector2(16, 9)
 viewport_size = Vector2(1152, 648)
 scene = ExtResource("6_5d6u7")
-collision_layer = 1048576
+collision_layer = 1179650
 
 [node name="Poke" parent="LeftHand" instance=ExtResource("7_70gaa")]
 
@@ -74,6 +73,8 @@ teleport_button_action = "primary_click"
 picked_up_mask = 196615
 
 [node name="Poke" parent="RightHand" instance=ExtResource("7_70gaa")]
+radius = 0.01
+teleport_distance = 0.2
 
 [node name="PlayerBody" parent="." instance=ExtResource("8_t4vmy")]
 collision_mask = 511
