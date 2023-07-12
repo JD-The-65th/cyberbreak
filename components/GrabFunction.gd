@@ -57,6 +57,7 @@ func _on_grip_pressed():
 		picked_up_object.set_collision_mask(picked_up_mask)
 		if picked_up_object is Module:
 			picked_up_object.held = true
+			picked_up_object.emit_signal("grabbed")
 		
 		
 		
@@ -70,6 +71,7 @@ func _on_grip_release():
 		picked_up_object.set_collision_mask(original_collision_mask)
 		if picked_up_object is Module:
 			picked_up_object.held = false
+			picked_up_object.emit_signal("ungrabbed")
 		picked_up_object = null
 
 
