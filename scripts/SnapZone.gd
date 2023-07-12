@@ -24,8 +24,8 @@ func snap_module(module: RigidBody3D):
 	snapped_module = module
 	module.disconnect("snapped", snap_module)
 	if module is Module: 
-		module.snapped_to += get_parent()
-	
+		module.snapped_to += [get_parent()]
+		get_parent().snapped_to += [module]
 	# Configure Settings
 	if joint_type == "Generic":
 		# Set Location softness to be more rigid
