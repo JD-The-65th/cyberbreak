@@ -15,7 +15,8 @@ func snap_module(module: RigidBody3D):
 	joint.node_b = module.get_path()
 	snapped_module = module
 	module.disconnect("snapped", snap_module)
-	
+	if module is Module:
+		module.snap_pending = false
 	# Configure Settings
 	if joint_type == "Generic":
 		pass
@@ -27,6 +28,11 @@ func snap_module(module: RigidBody3D):
 func _on_body_entered(body: RigidBody3D):
 	if body == get_parent().get_parent(): #Janky as hell, but hey, it works
 		return
+	if body is Module:
+		if !body.snap_pending:
+			body.snap_pending = true
+		else:
+			return
 	closest_module = body
 	body.connect("snapped", snap_module)
 
@@ -46,6 +52,9 @@ func _on_body_exited(body: RigidBody3D):
 		snapped_module = null
 		
 	elif body == closest_module:
+		if body is Module:
+			if !body.snap_pending:
+				body.snap_pending = false
 		closest_module = null
 		body.disconnect("snapped", snap_module)
 	return
