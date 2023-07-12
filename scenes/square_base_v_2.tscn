@@ -20,6 +20,7 @@ collision_mask = 720903
 mass = 1.62
 continuous_cd = true
 script = ExtResource("1_j7oj7")
+metadata/Scene = "res://scenes/square_base_v_2.tscn"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_kbodm")
