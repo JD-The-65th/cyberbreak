@@ -20,7 +20,7 @@ func exit():
 	$"../../XRCamera3D/MeshInstance3D".visible = false
 	left_grab_function.snappable = false
 	right_grab_function.snappable = false
-	await get_tree().create_timer(1).timeout
+	
 	
 func update(delta: float):
 	if settings_controller.is_button_pressed("ax_button"):
