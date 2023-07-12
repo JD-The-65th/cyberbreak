@@ -28,7 +28,11 @@ func _on_body_exited(body: RigidBody3D):
 		return
 		
 	if body == snapped_module:
-		return # I'll handle this later
+		joint.queue_free()
+		joint = null
+		$RemoteTransform3D.remote_path = null
+		snapped_module = null
+		
 	elif body == closest_module:
 		closest_module = null
 		body.disconnect("snapped", snap_module)
