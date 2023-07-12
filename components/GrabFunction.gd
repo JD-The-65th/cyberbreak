@@ -69,13 +69,8 @@ func _on_grip_release():
 			picked_up_object.emit_signal("snapped", picked_up_object)
 		picked_up_object.set_collision_layer(original_collision_layer)
 		picked_up_object.set_collision_mask(original_collision_mask)
-		var child_notified = false
 		if picked_up_object is Module:
-			if child_notified:
-				picked_up_object = null
-				return
 			picked_up_object.held = false
-			child_notified = true
 			picked_up_object.emit_signal("ungrabbed")
 		picked_up_object = null
 
