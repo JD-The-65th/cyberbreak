@@ -17,8 +17,8 @@ var snap_candidate : ModuleSnapZone
 
 
 
-var original_collision_layer
-var original_collision_mask
+var original_collision_layer = collision_layer
+var original_collision_mask = collision_mask
 var picked_up_layers = pow(2, 17-1) 
 var picked_up_mask = pow(2, 1-1) + pow(2, 2-1) + pow(2, 3-1) + pow(2, 17-1)
 
