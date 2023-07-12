@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bph2twmrb3bje" path="res://scenes/wrist_ui.tscn" id="6_5d6u7"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="6_b3hsq"]
 [ext_resource type="PackedScene" uid="uid://b6xesntm4qeo5" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_physics_tac_glove.tscn" id="7_8ghvb"]
-[ext_resource type="PackedScene" path="res://addons/godot-xr-tools/player/poke/poke.tscn" id="7_70gaa"]
+[ext_resource type="PackedScene" uid="uid://bs2p1gnuiq828" path="res://addons/godot-xr-tools/player/poke/poke.tscn" id="7_70gaa"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="8_t4vmy"]
 [ext_resource type="Script" path="res://scripts/stateMachineStuff/PlayMode.gd" id="10_djynx"]
 [ext_resource type="Script" path="res://components/state_machine_component.gd" id="10_nwkhs"]
@@ -49,7 +49,7 @@ strafe = true
 transform = Transform3D(1, 0, 0, 0, 0.999991, 0.00413642, 0, -0.00413642, 0.999991, 0, -0.054, 0.113)
 
 [node name="Viewport2Din3D" parent="LeftHand" instance=ExtResource("5_gbu45")]
-transform = Transform3D(8.10529e-10, 1.62106e-09, -0.0185427, 7.08587e-17, -0.0185427, -1.62106e-09, -0.0185427, 0, -8.10529e-10, -0.05, -0.0542091, 0.33)
+transform = Transform3D(1.31134e-09, 2.62268e-09, -0.03, -4.52987e-09, -0.03, -2.62268e-09, -0.03, 4.52987e-09, -1.31134e-09, -0.05, -0.0542091, 0.41)
 screen_size = Vector2(16, 9)
 viewport_size = Vector2(1152, 648)
 scene = ExtResource("6_5d6u7")
