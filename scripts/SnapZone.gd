@@ -18,7 +18,10 @@ func snap_module(module: RigidBody3D):
 	
 	# Configure Settings
 	if joint_type == "Generic":
-		pass
+		if module.rotation_type == "Rolling":
+			joint.set_flag_x(1, false)
+			joint.set_flag_y(1, false)
+			joint.set_flag_z(1, false)
 		
 	
 	
