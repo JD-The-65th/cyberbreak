@@ -12,6 +12,7 @@ func snap_module(module: RigidBody3D):
 	joint.node_a = get_parent().get_path()
 	joint.node_b = module.get_path()
 	snapped_module = module
+	module.disconnect("snapped", snap_module)
 	
 
 
