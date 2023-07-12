@@ -1,4 +1,5 @@
 extends Area3D
+class_name ModuleSnapZone
 
 var closest_module: RigidBody3D
 var snapped_module: RigidBody3D

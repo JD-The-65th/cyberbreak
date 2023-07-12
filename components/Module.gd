@@ -12,6 +12,11 @@ signal ungrabbed
 ## Signifies if the module is held or not
 var held : bool = false
 
+## The Closest Snapping Candidate
+var snap_candidate : ModuleSnapZone
+
+
+
 var original_collision_layer
 var original_collision_mask
 var picked_up_layers = pow(2, 17-1) 
