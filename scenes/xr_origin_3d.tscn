@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cmo5ssdte7tsp"]
+[gd_scene load_steps=14 format=3 uid="uid://cmo5ssdte7tsp"]
 
 [ext_resource type="PackedScene" path="res://addons/godot-xr-tools/misc/vr_common_shader_cache.tscn" id="1_af6c4"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="2_gjfns"]
@@ -12,6 +12,9 @@
 [ext_resource type="Script" path="res://components/state_machine_component.gd" id="10_nwkhs"]
 [ext_resource type="Script" path="res://scripts/stateMachineStuff/BuildMode.gd" id="11_rdasi"]
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_3org2"]
+size = Vector2(0.15, 0.15)
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hbmkj"]
 radius = 0.2
 height = 1.4
@@ -24,6 +27,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 current = true
 
 [node name="VRCommonShaderCache" parent="XRCamera3D" instance=ExtResource("1_af6c4")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XRCamera3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.24, 0.12, -0.82)
+visible = false
+mesh = SubResource("PlaneMesh_3org2")
 
 [node name="LeftHand" type="XRController3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)

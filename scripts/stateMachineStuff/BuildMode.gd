@@ -9,12 +9,16 @@ class_name BuildMode
 @export var settings_controller : XRController3D
 
 func enter():
+	$"../../XRCamera3D/MeshInstance3D".visible = true
 	left_grab_function.snappable = true
 	right_grab_function.snappable = true
+	await get_tree().create_timer(0.4).timeout
 
 func exit():
+	$"../../XRCamera3D/MeshInstance3D".visible = false
 	left_grab_function.snappable = false
 	right_grab_function.snappable = false
+	await get_tree().create_timer(0.4).timeout
 	
 func update(delta: float):
 	if settings_controller.is_button_pressed("ax_button"):
