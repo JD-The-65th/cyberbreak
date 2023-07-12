@@ -12,8 +12,8 @@ transparency = 1
 blend_mode = 1
 cull_mode = 1
 no_depth_test = true
-albedo_color = Color(0, 0.27451, 0.27451, 1)
-roughness = 0.0
+shading_mode = 0
+albedo_color = Color(0, 0.14902, 0.14902, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dejyk"]
 size = Vector3(0.125, 0.5, 1)

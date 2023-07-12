@@ -1,12 +1,15 @@
-[gd_scene load_steps=14 format=3 uid="uid://cmo5ssdte7tsp"]
+[gd_scene load_steps=17 format=3 uid="uid://cmo5ssdte7tsp"]
 
 [ext_resource type="PackedScene" path="res://addons/godot-xr-tools/misc/vr_common_shader_cache.tscn" id="1_af6c4"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="2_gjfns"]
 [ext_resource type="PackedScene" uid="uid://ddsj74hpt1kgb" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_physics_tac_glove.tscn" id="3_g2yue"]
 [ext_resource type="PackedScene" uid="uid://cxlfmvplssqp8" path="res://components/grab_function.tscn" id="4_xy7vm"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="5_gbu45"]
 [ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="5_qd4yl"]
+[ext_resource type="PackedScene" uid="uid://bph2twmrb3bje" path="res://scenes/wrist_ui.tscn" id="6_5d6u7"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="6_b3hsq"]
 [ext_resource type="PackedScene" uid="uid://b6xesntm4qeo5" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_physics_tac_glove.tscn" id="7_8ghvb"]
+[ext_resource type="PackedScene" path="res://addons/godot-xr-tools/player/poke/poke.tscn" id="7_70gaa"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="8_t4vmy"]
 [ext_resource type="Script" path="res://scripts/stateMachineStuff/PlayMode.gd" id="10_djynx"]
 [ext_resource type="Script" path="res://components/state_machine_component.gd" id="10_nwkhs"]
@@ -34,7 +37,7 @@ visible = false
 mesh = SubResource("PlaneMesh_3org2")
 
 [node name="LeftHand" type="XRController3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
+transform = Transform3D(1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
 tracker = &"left_hand"
 
 [node name="MovementDirect" parent="LeftHand" instance=ExtResource("2_gjfns")]
@@ -44,6 +47,15 @@ strafe = true
 
 [node name="GrabFunction" parent="LeftHand" instance=ExtResource("4_xy7vm")]
 transform = Transform3D(1, 0, 0, 0, 0.999991, 0.00413642, 0, -0.00413642, 0.999991, 0, -0.054, 0.113)
+
+[node name="Viewport2Din3D" parent="LeftHand" instance=ExtResource("5_gbu45")]
+transform = Transform3D(8.10529e-10, 1.62106e-09, -0.0185427, 7.08587e-17, -0.0185427, -1.62106e-09, -0.0185427, 0, -8.10529e-10, -0.05, -0.0542091, 0.33)
+screen_size = Vector2(16, 9)
+viewport_size = Vector2(1152, 648)
+scene = ExtResource("6_5d6u7")
+collision_layer = 1048576
+
+[node name="Poke" parent="LeftHand" instance=ExtResource("7_70gaa")]
 
 [node name="RightHand" type="XRController3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
@@ -60,6 +72,8 @@ teleport_button_action = "primary_click"
 
 [node name="GrabFunction" parent="RightHand" instance=ExtResource("4_xy7vm")]
 picked_up_mask = 196615
+
+[node name="Poke" parent="RightHand" instance=ExtResource("7_70gaa")]
 
 [node name="PlayerBody" parent="." instance=ExtResource("8_t4vmy")]
 collision_mask = 511

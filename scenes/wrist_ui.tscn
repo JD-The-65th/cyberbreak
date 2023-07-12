@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://bph2twmrb3bje"]
+
+[ext_resource type="FontFile" uid="uid://cmfghetkhbvtl" path="res://assets/fonts/MaterialSymbolsRounded[FILL,GRAD,opsz,wght].woff2" id="1_1q3sj"]
+[ext_resource type="Script" path="res://scenes/wrist_ui.gd" id="1_afha3"]
+
+[node name="WristUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_afha3")
+
+[node name="Quick Access Menu" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 1056.0
+offset_right = 1152.0
+offset_bottom = 648.0
+alignment = 1
+
+[node name="HomeButton" type="Button" parent="Quick Access Menu"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_1q3sj")
+theme_override_font_sizes/font_size = 32
+text = "home"
+icon_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="MainMenu" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+anchor_left = 0.111111
+anchor_top = 0.0987654
+anchor_right = 0.888889
+anchor_bottom = 0.888889
+metadata/_edit_use_anchors_ = true
+
+[node name="Top Panel" type="Panel" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.0625
+offset_right = 3.05176e-05
+grow_horizontal = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Welcome Test" type="Label" parent="MainMenu/Top Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Welcome, CyberBreaker!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Quick Access Menu/HomeButton" to="." method="_on_home_button_pressed"]
