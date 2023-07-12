@@ -12,9 +12,6 @@ signal ungrabbed
 ## Signifies if the module is held or not
 var held : bool = false
 
-## Signifies if a snap is pending for this module
-var snap_pending : bool = false
-
 var original_collision_layer
 var original_collision_mask
 var picked_up_layers = pow(2, 17-1) 
