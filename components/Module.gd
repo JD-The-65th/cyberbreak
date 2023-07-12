@@ -6,6 +6,8 @@ signal unsnapped
 
 signal scaled(new_scale: Vector3)
 
+signal grabbed
+signal ungrabbed
 
 ## Signifies if the module is held or not
 var held : bool = false
