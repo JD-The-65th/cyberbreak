@@ -28,7 +28,7 @@ func snap_module(module: RigidBody3D):
 
 
 func _on_body_entered(body: RigidBody3D):
-	if body == get_parent(): #Janky as hell, but hey, it works
+	if body == get_parent():
 		return
 	closest_module = body
 	body.connect("snapped", snap_module)
@@ -36,7 +36,7 @@ func _on_body_entered(body: RigidBody3D):
 
 
 func _on_body_exited(body: RigidBody3D):
-	if body == get_parent(): #Janky as hell, but hey, it works
+	if body == get_parent():
 		return
 	
 	if body == snapped_module:
