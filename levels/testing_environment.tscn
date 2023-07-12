@@ -1,9 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://c1sf2cab6jct7"]
+[gd_scene load_steps=20 format=3 uid="uid://c1sf2cab6jct7"]
 
 [ext_resource type="Texture2D" uid="uid://b7qnw50peaqjp" path="res://addons/kenney_prototype_textures/dark/texture_08.png" id="1_y1pph"]
 [ext_resource type="PackedScene" uid="uid://clc5dre31iskm" path="res://addons/godot-xr-tools/xr/start_xr.tscn" id="2_nq5sa"]
 [ext_resource type="PackedScene" uid="uid://cmo5ssdte7tsp" path="res://scenes/xr_origin_3d.tscn" id="3_mg21i"]
-[ext_resource type="PackedScene" uid="uid://b5c0nr3os77h8" path="res://components/MSFS/msfs_particle_emitter.tscn" id="4_il5h1"]
 [ext_resource type="AudioStream" uid="uid://81cwh4y8n8m" path="res://music/unfa/rest/unfaRest.ogg" id="8_dninl"]
 [ext_resource type="PackedScene" uid="uid://cigui7230umnp" path="res://scenes/square_base_v_2.tscn" id="9_nkirg"]
 [ext_resource type="PackedScene" uid="uid://v6tatf78qgf8" path="res://scenes/square_base.tscn" id="9_tbnho"]
@@ -81,9 +80,6 @@ shape = SubResource("ConcavePolygonShape3D_o5pmh")
 [node name="StartXR" parent="." instance=ExtResource("2_nq5sa")]
 
 [node name="XROrigin3D" parent="." instance=ExtResource("3_mg21i")]
-
-[node name="MSFSParticleEmitter" parent="XROrigin3D/RightHand" index="4" instance=ExtResource("4_il5h1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0123885, -0.0685662, 0.0529872)
 
 [node name="SquareBase" parent="." instance=ExtResource("9_tbnho")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.0625, -2.53577)
