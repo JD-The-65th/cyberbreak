@@ -51,10 +51,17 @@ func _on_body_exited(body: RigidBody3D):
 	return
 
 func update_child_was_grabbed():
+	if snapped_module is Module:
+		snapped_module.register_grab()
+		snapped_module.emit_signal("grabbed")
 	
 	
 func update_child_was_let_go():
-	pass
+	if snapped_module is Module:
+		snapped_module.unregister_grab()
+		snapped_module.emit_signal("ungrabbed")
+		
+	
 
 
 func _ready():
