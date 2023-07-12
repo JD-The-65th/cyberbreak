@@ -18,7 +18,6 @@ func _ready():
 			i.set_meta("attachedToSpawner", true)
 			i.freeze = false
 			
-
 func handle_object(object):
 	object = get_node(str(object))
 	var attachmentPoint = object.get_meta("attachmentPoint")
