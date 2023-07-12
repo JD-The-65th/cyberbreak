@@ -19,6 +19,14 @@ offset_right = 1152.0
 offset_bottom = 648.0
 alignment = 1
 
+[node name="HomeButton2" type="Button" parent="Quick Access Menu"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_1q3sj")
+theme_override_font_sizes/font_size = 32
+text = "tools_phillips"
+icon_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="HomeButton" type="Button" parent="Quick Access Menu"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_1q3sj")
@@ -27,8 +35,15 @@ text = "home"
 icon_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="InventoryButton" type="Button" parent="Quick Access Menu"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_1q3sj")
+theme_override_font_sizes/font_size = 32
+text = "backpack"
+icon_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="MainMenu" type="Panel" parent="."]
-visible = false
 layout_mode = 0
 anchor_left = 0.111111
 anchor_top = 0.0987654

@@ -14,7 +14,7 @@ height = 0.01
 radial_segments = 32
 rings = 16
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w7qg8"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ee8gy"]
 transparency = 1
 shading_mode = 0
 albedo_color = Color(0.8, 0.8, 1, 0.5)
@@ -31,14 +31,13 @@ custom_integrator = true
 max_contacts_reported = 1
 contact_monitor = true
 script = ExtResource("2")
-teleport_distance = 0.1
 
 [node name="CollisionShape" type="CollisionShape3D" parent="PokeBody"]
 shape = SubResource("1")
 
 [node name="MeshInstance" type="MeshInstance3D" parent="PokeBody"]
 mesh = SubResource("2")
-surface_material_override/0 = SubResource("StandardMaterial3D_w7qg8")
+surface_material_override/0 = SubResource("StandardMaterial3D_ee8gy")
 
 [connection signal="body_entered" from="PokeBody" to="." method="_on_PokeBody_body_entered"]
 [connection signal="body_exited" from="PokeBody" to="." method="_on_PokeBody_body_exited"]
