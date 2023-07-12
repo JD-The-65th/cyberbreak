@@ -15,6 +15,9 @@ var held : bool = false
 ## The Closest Snapping Candidate
 var snap_candidate : ModuleSnapZone
 
+## An array of the modules that this module is snapped to
+var snapped_to : Array = []
+
 
 
 @onready var original_collision_layer = collision_layer

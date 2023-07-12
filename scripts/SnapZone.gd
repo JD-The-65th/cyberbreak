@@ -12,6 +12,10 @@ var joint : Joint3D
 func snap_module(module: RigidBody3D):
 	if snapped_module:
 		return
+	if module is Module:
+			for i in module.snapped_to:
+				if i == get_parent():
+					return
 	#No sanity checking yet, jus gonna assume parent is a Module cuz why wouldn't it be
 	joint = get_parent().spawn_joint(joint_type)
 	$RemoteTransform3D.remote_path = joint.get_path()
@@ -19,6 +23,8 @@ func snap_module(module: RigidBody3D):
 	joint.node_b = module.get_path()
 	snapped_module = module
 	module.disconnect("snapped", snap_module)
+	if module is Module: 
+		module.snapped_to += get_parent()
 	
 	# Configure Settings
 	if joint_type == "Generic":
