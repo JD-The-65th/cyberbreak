@@ -29,7 +29,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_bx1vf")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_v61u0")
 
-[node name="SnapZone" parent="." instance=ExtResource("3_g01w1")]
+[node name="SnapZones" parent="." instance=ExtResource("3_g01w1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.062, 0)
 
 [node name="SnapZone2" parent="." instance=ExtResource("3_g01w1")]

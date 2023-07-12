@@ -7,6 +7,7 @@ var snapped_module: RigidBody3D
 var joint : Joint3D
 
 @export_enum("Generic", "Socket") var joint_type : String = "Generic"
+@export_enum("Cube", "Sphere", "Bigger Sphere") var collision_type : String = "Cube"
 
 func snap_module(module: RigidBody3D):
 	if snapped_module:
@@ -72,6 +73,19 @@ func update_child_was_let_go():
 func _ready():
 	get_parent().connect("grabbed", update_child_was_grabbed)
 	get_parent().connect("ungrabbed", update_child_was_let_go)
+	if collision_type != "Cube":
+		if collision_type == "Sphere":
+			$Sphere.disabled = false
+			$BiggerSphere.disabled = true 
+			$Cube.disabled = true
+		else:
+			$Sphere.disabled = true
+			$BiggerSphere.disabled = false
+			$Cube.disabled = true
+	else:
+		$Sphere.disabled = true
+		$BiggerSphere.disabled = true 
+		$Cube.disabled = false
 
 
 

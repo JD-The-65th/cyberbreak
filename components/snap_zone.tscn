@@ -1,9 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://djkuj56cd8o36"]
+[gd_scene load_steps=4 format=3 uid="uid://djkuj56cd8o36"]
 
 [ext_resource type="Script" path="res://scripts/SnapZone.gd" id="1_63lb1"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ntuhq"]
+size = Vector3(0.125, 0.125, 0.125)
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_5qtss"]
-radius = 0.063
+radius = 0.125
 
 [node name="SnapZone" type="Area3D"]
 collision_layer = 1024
@@ -11,7 +14,13 @@ collision_mask = 67584
 monitorable = false
 script = ExtResource("1_63lb1")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="Cube" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_ntuhq")
+
+[node name="Sphere" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_5qtss")
+
+[node name="BiggerSphere" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_5qtss")
 
 [node name="RemoteTransform3D" type="RemoteTransform3D" parent="."]

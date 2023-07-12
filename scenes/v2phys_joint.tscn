@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c0te0uofm7c26"]
+[gd_scene load_steps=8 format=3 uid="uid://c0te0uofm7c26"]
 
 [ext_resource type="Script" path="res://components/Module.gd" id="1_vajgt"]
 [ext_resource type="Shader" path="res://materials/testHolo.gdshader" id="1_xw7l5"]
+[ext_resource type="PackedScene" uid="uid://djkuj56cd8o36" path="res://components/snap_zone.tscn" id="3_1ebl3"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_2tnv4"]
 friction = 25.0
@@ -35,3 +36,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_aqpot")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_cj5dy")
+
+[node name="SnapZone" parent="." instance=ExtResource("3_1ebl3")]
+joint_type = "Socket"
+collision_type = "Bigger Sphere"

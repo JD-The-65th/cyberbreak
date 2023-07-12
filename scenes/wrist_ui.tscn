@@ -19,7 +19,7 @@ offset_right = 1152.0
 offset_bottom = 648.0
 alignment = 1
 
-[node name="HomeButton2" type="Button" parent="Quick Access Menu"]
+[node name="ToolTipButton" type="Button" parent="Quick Access Menu"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_1q3sj")
 theme_override_font_sizes/font_size = 32
