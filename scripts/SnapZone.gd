@@ -19,6 +19,8 @@ func snap_module(module: RigidBody3D):
 	# Configure Settings
 	if joint_type == "Generic":
 		pass
+		
+	
 	
 
 
@@ -48,7 +50,16 @@ func _on_body_exited(body: RigidBody3D):
 		body.disconnect("snapped", snap_module)
 	return
 
+func update_child_was_grabbed():
+	
+	
+func update_child_was_let_go():
+	pass
 
+
+func _ready():
+	get_parent().connect("grabbed", update_child_was_grabbed)
+	get_parent().connect("ungrabbed", update_child_was_let_go)
 
 
 
