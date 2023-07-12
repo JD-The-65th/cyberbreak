@@ -26,6 +26,7 @@ mass = 1.62
 physics_material_override = SubResource("PhysicsMaterial_2tnv4")
 continuous_cd = true
 script = ExtResource("1_vajgt")
+rotation_type = "Rolling"
 metadata/Scene = "res://scenes/v2phys_joint.tscn"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

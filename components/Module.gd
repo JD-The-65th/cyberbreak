@@ -17,6 +17,8 @@ var original_collision_mask
 var picked_up_layers = pow(2, 17-1) 
 var picked_up_mask = pow(2, 1-1) + pow(2, 2-1) + pow(2, 3-1) + pow(2, 17-1)
 
+@export_enum("Static", "Rolling") var rotation_type = "Static"
+
 ## Spawns a Physics Joint as a sibling and returns it.
 ## Possible types are Generic and Socket (ConeTwistJoint3D.)
 ## If the type is incorrect, it just returns a generic joint.
