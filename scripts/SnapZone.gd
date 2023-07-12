@@ -53,7 +53,7 @@ func _on_body_exited(body: RigidBody3D):
 		
 	elif body == closest_module:
 		if body is Module:
-			if body.snap_pending:
+			if !body.snap_pending:
 				body.snap_pending = false
 		closest_module = null
 		body.disconnect("snapped", snap_module)
