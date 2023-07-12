@@ -30,24 +30,18 @@ shape = SubResource("BoxShape3D_v61u0")
 
 [node name="SnapZone" parent="." instance=ExtResource("3_g01w1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.062, 0)
-joint_type = null
 
 [node name="SnapZone2" parent="." instance=ExtResource("3_g01w1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.062, 0, 0)
-joint_type = null
 
 [node name="SnapZone3" parent="." instance=ExtResource("3_g01w1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.062, 0, 0)
-joint_type = null
 
 [node name="SnapZone4" parent="." instance=ExtResource("3_g01w1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.062, 0)
-joint_type = null
 
 [node name="SnapZone5" parent="." instance=ExtResource("3_g01w1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.062)
-joint_type = null
 
 [node name="SnapZone6" parent="." instance=ExtResource("3_g01w1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.062)
-joint_type = null
