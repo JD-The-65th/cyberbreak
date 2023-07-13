@@ -16,6 +16,8 @@ func snap_module(module: RigidBody3D):
 			for i in module.snapped_to:
 				if i == get_parent():
 					return
+	if module in get_parent().snapped_to:
+		return
 	#No sanity checking yet, jus gonna assume parent is a Module cuz why wouldn't it be
 	joint = get_parent().spawn_joint(joint_type)
 	$RemoteTransform3D.remote_path = joint.get_path()
