@@ -39,6 +39,9 @@ func snap_module(module: RigidBody3D):
 	# Configure Settings
 	if joint_type == "Generic":
 		# Set Location softness to be more rigid
+		joint.set_param_x(2, 4.0)
+		joint.set_param_y(2, 4.0)
+		joint.set_param_z(2, 4.0)
 		joint.set_param_x(2, 2.0)
 		joint.set_param_y(2, 2.0)
 		joint.set_param_z(2, 2.0)
@@ -81,6 +84,8 @@ func update_child_was_grabbed():
 	
 	
 func update_child_was_let_go():
+	# This can EASILY be sent in an infinite loop if configured incorrectly
+	# Infinite loop -> Crash ):
 	if snapped_module:
 		if snapped_module is Module:
 			snapped_module.unregister_grab()
