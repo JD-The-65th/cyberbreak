@@ -30,6 +30,14 @@ text = "tools_phillips"
 icon_alignment = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="BuildModeButton" type="Button" parent="Quick Access Menu"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_1q3sj")
+theme_override_font_sizes/font_size = 32
+text = "construction"
+icon_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="HomeButton" type="Button" parent="Quick Access Menu"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_1q3sj")
@@ -43,6 +51,14 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_1q3sj")
 theme_override_font_sizes/font_size = 32
 text = "backpack"
+icon_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="WikiButton" type="Button" parent="Quick Access Menu"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_1q3sj")
+theme_override_font_sizes/font_size = 32
+text = "quiz"
 icon_alignment = 1
 metadata/_edit_use_anchors_ = true
 
