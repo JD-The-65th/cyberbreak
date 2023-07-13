@@ -26,10 +26,10 @@ func exit():
 	
 func update(delta: float):
 	if button_pressed:
-		if !settings_controller.is_button_pressed("ax_button"):
+		if settings_controller.is_button_pressed("ax_button") != true:
 			button_pressed = false
 			return
 	
-	if settings_controller.is_button_pressed("ax_button"):
+	elif settings_controller.is_button_pressed("ax_button"):
 		Transitioned.emit(self, "PlayMode")
 		
