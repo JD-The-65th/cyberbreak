@@ -16,7 +16,8 @@ script = ExtResource("1_afha3")
 [node name="Quick Access Menu" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 0.0833333
+anchor_left = 0.00694444
+anchor_right = 0.0902778
 anchor_bottom = 1.0
 alignment = 1
 metadata/_edit_use_anchors_ = true
