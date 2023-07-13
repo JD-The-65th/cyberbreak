@@ -14,11 +14,12 @@ mouse_filter = 1
 script = ExtResource("1_afha3")
 
 [node name="Quick Access Menu" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_left = 1056.0
-offset_right = 1152.0
-offset_bottom = 648.0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.0833333
+anchor_bottom = 1.0
 alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="ToolTipButton" type="Button" parent="Quick Access Menu"]
 layout_mode = 2
@@ -45,7 +46,6 @@ icon_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="MainMenu" type="Panel" parent="."]
-visible = false
 layout_mode = 0
 anchor_left = 0.111111
 anchor_top = 0.0987654

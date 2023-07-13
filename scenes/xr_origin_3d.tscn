@@ -48,7 +48,7 @@ strafe = true
 transform = Transform3D(1, 0, 0, 0, 0.999991, 0.00413642, 0, -0.00413642, 0.999991, 0, -0.054, 0.113)
 
 [node name="Viewport2Din3D" parent="LeftHand" instance=ExtResource("5_gbu45")]
-transform = Transform3D(4.37114e-08, 8.74227e-08, -1, -1.50996e-07, -1, -8.74227e-08, -1, 1.50996e-07, -4.37114e-08, -0.1, -0.0542091, 0.43)
+transform = Transform3D(4.37114e-08, 8.74227e-08, -1, -1.50996e-07, -1, -8.74227e-08, -1, 1.50996e-07, -4.37114e-08, -0.1, -0.0542091, -0.07)
 screen_size = Vector2(0.6, 0.4)
 viewport_size = Vector2(1152, 648)
 scene = ExtResource("6_5d6u7")
@@ -73,8 +73,6 @@ teleport_button_action = "primary_click"
 picked_up_mask = 196615
 
 [node name="Poke" parent="RightHand" instance=ExtResource("7_70gaa")]
-radius = 0.01
-teleport_distance = 0.2
 
 [node name="PlayerBody" parent="." instance=ExtResource("8_t4vmy")]
 collision_mask = 511
