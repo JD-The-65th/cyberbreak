@@ -9,6 +9,9 @@
    id="svg5"
    inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
    sodipodi:docname="logo.svg"
+   inkscape:export-filename="logo432.png"
+   inkscape:export-xdpi="81"
+   inkscape:export-ydpi="81"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -25,8 +28,8 @@
      inkscape:document-units="px"
      showgrid="false"
      inkscape:zoom="1.0878501"
-     inkscape:cx="249.57483"
-     inkscape:cy="262.90388"
+     inkscape:cx="155.81191"
+     inkscape:cy="189.36433"
      inkscape:window-width="1584"
      inkscape:window-height="1008"
      inkscape:window-x="669"
@@ -97,7 +100,7 @@
        transform="matrix(1.3623985,0,0,0.80929833,67.99773,62.233299)"><tspan
          x="148.66644"
          y="216.20742"
-         id="tspan1624">C</tspan></text>
+         id="tspan1926">C</tspan></text>
     <text
        xml:space="preserve"
        id="text1604"
@@ -105,6 +108,6 @@
        transform="matrix(1.3623985,0,0,0.80929833,70.755463,57.637077)"><tspan
          x="148.66644"
          y="216.20742"
-         id="tspan1626">C</tspan></text>
+         id="tspan1928">C</tspan></text>
   </g>
 </svg>
