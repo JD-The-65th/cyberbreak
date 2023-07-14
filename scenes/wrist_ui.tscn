@@ -150,7 +150,6 @@ anchor_right = 1.0
 anchor_bottom = 0.857143
 theme_override_fonts/font = ExtResource("1_1q3sj")
 tab_alignment = 1
-drag_to_rearrange_enabled = true
 tab_count = 5
 tab_0/title = "construction"
 tab_1/title = "backpack"
