@@ -1,7 +1,50 @@
-[gd_scene load_steps=3 format=3 uid="uid://bph2twmrb3bje"]
+[gd_scene load_steps=5 format=3 uid="uid://bph2twmrb3bje"]
 
 [ext_resource type="FontFile" uid="uid://cmfghetkhbvtl" path="res://assets/fonts/MaterialSymbolsRounded[FILL,GRAD,opsz,wght].woff2" id="1_1q3sj"]
 [ext_resource type="Script" path="res://scenes/wrist_ui.gd" id="1_afha3"]
+
+[sub_resource type="GDScript" id="GDScript_v73ct"]
+resource_name = "TabBarController"
+script/source = "@tool
+extends TabBar
+
+
+@onready var current_applet : Panel = $\"../BuildModeApplet\"
+
+func _ready() -> void:
+	
+	current_tab = 2
+	$\"../BuildModeApplet\".visible = false
+	$\"../InventoryApplet\".visible = false
+	$\"../HelpDeskApplet\".visible = false
+	$\"../SettingsApplet\".visible = false
+
+func _on_tab_changed(tab: int) -> void:
+	match tab:
+		0:
+			$\"../BuildModeApplet\".visible = true
+			current_applet.visible = false
+			current_applet = $\"../BuildModeApplet\"
+		1:
+			$\"../InventoryApplet\".visible = true
+			current_applet.visible = false
+			current_applet = $\"../InventoryApplet\"
+		2:
+			$\"../HomeApplet\".visible = true
+			current_applet.visible = false
+			current_applet = $\"../HomeApplet\"
+		3:
+			$\"../HelpDeskApplet\".visible = true
+			current_applet.visible = false
+			current_applet = $\"../HelpDeskApplet\"
+		4:
+			$\"../SettingsApplet\".visible = true
+			current_applet.visible = false
+			current_applet = $\"../SettingsApplet\"
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cih53"]
+bg_color = Color(0.16446, 0.16446, 0.16446, 1)
 
 [node name="WristUI" type="Control"]
 layout_mode = 3
@@ -63,7 +106,8 @@ icon_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="MainMenu" type="Panel" parent="."]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.111111
 anchor_top = 0.0987654
 anchor_right = 0.888889
@@ -90,4 +134,162 @@ text = "Welcome, CyberBreaker!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="TabMenu" type="Panel" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.890625
+anchor_right = 1.0
+anchor_bottom = 1.0
+metadata/_edit_use_anchors_ = true
+
+[node name="TabBar" type="TabBar" parent="MainMenu/TabMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.142857
+anchor_right = 1.0
+anchor_bottom = 0.857143
+theme_override_fonts/font = ExtResource("1_1q3sj")
+tab_alignment = 1
+drag_to_rearrange_enabled = true
+tab_count = 5
+tab_0/title = "construction"
+tab_1/title = "backpack"
+tab_2/title = "Home"
+tab_3/title = "quiz"
+tab_4/title = "Settings"
+script = SubResource("GDScript_v73ct")
+metadata/_edit_use_anchors_ = true
+
+[node name="BuildModeApplet" type="Panel" parent="MainMenu/TabMenu"]
+layout_mode = 0
+anchor_left = 0.0178571
+anchor_top = -7.28571
+anchor_right = 0.982143
+anchor_bottom = -0.285714
+metadata/_edit_use_anchors_ = true
+
+[node name="TitleBar" type="Panel" parent="MainMenu/TabMenu/BuildModeApplet"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 0.0612245
+theme_override_styles/panel = SubResource("StyleBoxFlat_cih53")
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="Label" parent="MainMenu/TabMenu/BuildModeApplet/TitleBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Bulid Mode"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InventoryApplet" type="Panel" parent="MainMenu/TabMenu"]
+layout_mode = 0
+anchor_left = 0.0178571
+anchor_top = -7.28571
+anchor_right = 0.982143
+anchor_bottom = -0.285714
+metadata/_edit_use_anchors_ = true
+
+[node name="TitleBar" type="Panel" parent="MainMenu/TabMenu/InventoryApplet"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 0.0612245
+theme_override_styles/panel = SubResource("StyleBoxFlat_cih53")
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="Label" parent="MainMenu/TabMenu/InventoryApplet/TitleBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Inventory"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HomeApplet" type="Panel" parent="MainMenu/TabMenu"]
+layout_mode = 0
+anchor_left = 0.0178571
+anchor_top = -7.28571
+anchor_right = 0.982143
+anchor_bottom = -0.285714
+metadata/_edit_use_anchors_ = true
+
+[node name="TitleBar" type="Panel" parent="MainMenu/TabMenu/HomeApplet"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 0.0612245
+theme_override_styles/panel = SubResource("StyleBoxFlat_cih53")
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="Label" parent="MainMenu/TabMenu/HomeApplet/TitleBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Home"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HelpDeskApplet" type="Panel" parent="MainMenu/TabMenu"]
+layout_mode = 0
+anchor_left = 0.0178571
+anchor_top = -7.28571
+anchor_right = 0.982143
+anchor_bottom = -0.285714
+metadata/_edit_use_anchors_ = true
+
+[node name="TitleBar" type="Panel" parent="MainMenu/TabMenu/HelpDeskApplet"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 0.0612245
+theme_override_styles/panel = SubResource("StyleBoxFlat_cih53")
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="Label" parent="MainMenu/TabMenu/HelpDeskApplet/TitleBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Help Desk"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SettingsApplet" type="Panel" parent="MainMenu/TabMenu"]
+layout_mode = 0
+anchor_left = 0.0178571
+anchor_top = -7.28571
+anchor_right = 0.982143
+anchor_bottom = -0.285714
+metadata/_edit_use_anchors_ = true
+
+[node name="TitleBar" type="Panel" parent="MainMenu/TabMenu/SettingsApplet"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 0.0612245
+theme_override_styles/panel = SubResource("StyleBoxFlat_cih53")
+metadata/_edit_use_anchors_ = true
+
+[node name="Title" type="Label" parent="MainMenu/TabMenu/SettingsApplet/TitleBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Settings
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="Quick Access Menu/HomeButton" to="." method="_on_home_button_pressed"]
+[connection signal="tab_changed" from="MainMenu/TabMenu/TabBar" to="MainMenu/TabMenu/TabBar" method="_on_tab_changed"]
