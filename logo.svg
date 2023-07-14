@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="512"
+   height="512"
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="logo.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="1.0878501"
+     inkscape:cx="249.57483"
+     inkscape:cy="262.90388"
+     inkscape:window-width="1584"
+     inkscape:window-height="1008"
+     inkscape:window-x="669"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect1599"
+       is_visible="true"
+       lpeversion="1"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect1540"
+       is_visible="true"
+       lpeversion="1" />
+    <rect
+       x="0"
+       y="38.608262"
+       width="374.13244"
+       height="419.17541"
+       id="rect1226" />
+    <rect
+       x="203.9322"
+       y="-123.66102"
+       width="353.62712"
+       height="379.66102"
+       id="rect406" />
+    <rect
+       x="69.423729"
+       y="154.0339"
+       width="316.74576"
+       height="264.67796"
+       id="rect236" />
+    <rect
+       x="0"
+       y="38.608262"
+       width="374.13244"
+       height="419.17541"
+       id="rect1606" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:#00ccff;stroke:#ef5475;stroke-width:180.107;stroke-linecap:round;stroke-linejoin:bevel;stroke-opacity:0"
+       d="M 290.92883,452.83691 426.36181,87.06557 20.160374,158.75877 253.42394,211.81022 Z"
+       id="path562"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="fill:#005d74;fill-opacity:1;stroke:#ef5475;stroke-width:180.107;stroke-linecap:round;stroke-linejoin:bevel;stroke-opacity:0"
+       d="M 301.95976,467.59249 437.39274,101.82114 31.191306,173.51433 264.45487,226.56578 Z"
+       id="path564"
+       sodipodi:nodetypes="ccccc" />
+    <text
+       xml:space="preserve"
+       id="text1224"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:192px;font-family:VT323;-inkscape-font-specification:'VT323, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;white-space:pre;shape-inside:url(#rect1226);display:inline;fill:#008080;fill-opacity:1;stroke:#ef5475;stroke-width:59.6636;stroke-linecap:round;stroke-linejoin:bevel;stroke-opacity:0"
+       transform="matrix(1.3623985,0,0,0.80929833,67.99773,62.233299)"><tspan
+         x="148.66644"
+         y="216.20742"
+         id="tspan1624">C</tspan></text>
+    <text
+       xml:space="preserve"
+       id="text1604"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:192px;font-family:VT323;-inkscape-font-specification:'VT323, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;white-space:pre;shape-inside:url(#rect1606);display:inline;fill:#00ffff;fill-opacity:1;stroke:#ef5475;stroke-width:59.6636;stroke-linecap:round;stroke-linejoin:bevel;stroke-opacity:0"
+       transform="matrix(1.3623985,0,0,0.80929833,70.755463,57.637077)"><tspan
+         x="148.66644"
+         y="216.20742"
+         id="tspan1626">C</tspan></text>
+  </g>
+</svg>

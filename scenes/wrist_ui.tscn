@@ -161,6 +161,7 @@ script = SubResource("GDScript_v73ct")
 metadata/_edit_use_anchors_ = true
 
 [node name="BuildModeApplet" type="Panel" parent="MainMenu/TabMenu"]
+visible = false
 layout_mode = 0
 anchor_left = 0.0178571
 anchor_top = -7.28571
@@ -187,6 +188,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="InventoryApplet" type="Panel" parent="MainMenu/TabMenu"]
+visible = false
 layout_mode = 0
 anchor_left = 0.0178571
 anchor_top = -7.28571
@@ -239,6 +241,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="HelpDeskApplet" type="Panel" parent="MainMenu/TabMenu"]
+visible = false
 layout_mode = 0
 anchor_left = 0.0178571
 anchor_top = -7.28571
@@ -265,6 +268,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="SettingsApplet" type="Panel" parent="MainMenu/TabMenu"]
+visible = false
 layout_mode = 0
 anchor_left = 0.0178571
 anchor_top = -7.28571

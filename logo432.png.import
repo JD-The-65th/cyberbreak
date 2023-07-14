@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgfw346b7rbak"
-path="res://.godot/imported/tempicon.png-88687b9d27177879fef83e5f5e71c589.ctex"
+uid="uid://blxe0cqhoae4a"
+path="res://.godot/imported/logo432.png-d9a4f13019d707fdde3dc6c3ba0cd0af.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tempicon.png"
-dest_files=["res://.godot/imported/tempicon.png-88687b9d27177879fef83e5f5e71c589.ctex"]
+source_file="res://logo432.png"
+dest_files=["res://.godot/imported/logo432.png-d9a4f13019d707fdde3dc6c3ba0cd0af.ctex"]
 
 [params]
 
