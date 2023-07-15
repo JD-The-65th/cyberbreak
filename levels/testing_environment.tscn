@@ -22,8 +22,9 @@ sky_material = SubResource("PhysicalSkyMaterial_gx25x")
 [sub_resource type="Environment" id="Environment_tjlfa"]
 background_mode = 2
 sky = SubResource("Sky_6p37l")
-tonemap_mode = 2
-glow_enabled = true
+tonemap_mode = 1
+adjustment_enabled = true
+adjustment_brightness = 0.87
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2e21p"]
 albedo_texture = ExtResource("1_y1pph")
@@ -71,7 +72,7 @@ data = PackedVector3Array(-2, 1, 0.25, 2, 1, 0.25, -2, -1, 0.25, 2, 1, 0.25, 2, 
 environment = SubResource("Environment_tjlfa")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0.472865, -0.871775, 0.128091, 0.162478, 0.229146, 0.959736, 0, 0, 0)
+transform = Transform3D(-0.866025, -0.433013, 0.249999, 0.491996, -0.827102, 0.271739, 0.0891084, 0.358332, 0.929332, 0, 0, 0)
 light_bake_mode = 1
 shadow_enabled = true
 directional_shadow_mode = 1
