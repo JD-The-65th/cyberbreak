@@ -4,6 +4,8 @@ class_name ModuleSnapZone
 var closest_module: RigidBody3D
 var snapped_module: RigidBody3D
 
+var grab_updated : bool = true
+
 var joint : Joint3D
 
 @export_enum("Generic", "Socket", "Hinge") var joint_type : String = "Generic"
@@ -93,6 +95,9 @@ func update_child_was_grabbed():
 	if snapped_module is Module:
 		snapped_module.register_grab()
 		snapped_module.emit_signal("grabbed")
+	if get_parent().snapped_to:
+		for i in get_parent().snapped_to:
+			i.register_grab()
 	
 	
 func update_child_was_let_go():
@@ -102,6 +107,9 @@ func update_child_was_let_go():
 		if snapped_module is Module:
 			snapped_module.unregister_grab()
 			snapped_module.emit_signal("ungrabbed")
+	if get_parent().snapped_to:
+		for i in get_parent().snapped_to:
+			i.unregister_grab()
 		
 	
 
