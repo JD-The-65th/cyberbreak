@@ -4,22 +4,10 @@ class_name PlayMode
 
 @export var settings_controller : XRController3D
 
-
-var button_pressed : bool = true
-
-func enter():
-	button_pressed = true
-
-func update(delta: float):
-	if button_pressed:
-		if settings_controller.is_button_pressed("ax_button") != true:
-			button_pressed = false
-			return
-	
-	elif settings_controller.is_button_pressed("ax_button"):
-		build_mode_entered()
+func _ready() -> void:
+	settings_controller.connect("button_pressed", hand_button_pressed)
 
 
-func build_mode_entered():
-	Transitioned.emit(self, "BuildMode")
-	
+func hand_button_pressed(name: String) -> void:
+	if name == "ax_button":
+		Transitioned.emit(self, "BuildMode")
