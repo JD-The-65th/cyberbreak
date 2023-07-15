@@ -66,6 +66,8 @@ func snap_module(module: RigidBody3D):
 func _on_body_entered(body: RigidBody3D):
 	if body == get_parent():
 		return
+	elif body in get_parent().snapped_to:
+		return
 	elif body == snapped_module or body == closest_module:
 		return
 	closest_module = body
