@@ -133,6 +133,7 @@ grow_vertical = 2
 text = "Welcome, CyberBreaker!"
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="TabMenu" type="Panel" parent="MainMenu"]
 layout_mode = 1

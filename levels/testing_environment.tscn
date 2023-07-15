@@ -72,7 +72,7 @@ data = PackedVector3Array(-2, 1, 0.25, 2, 1, 0.25, -2, -1, 0.25, 2, 1, 0.25, 2, 
 environment = SubResource("Environment_tjlfa")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.433013, 0.249999, 0.491996, -0.827102, 0.271739, 0.0891084, 0.358332, 0.929332, 0, 0, 0)
+transform = Transform3D(-0.866025, -0.433014, 0.249999, 0.482358, -0.855185, 0.189708, 0.13165, 0.284881, 0.949479, 0, 0, 0)
 light_bake_mode = 1
 shadow_enabled = true
 directional_shadow_mode = 1
