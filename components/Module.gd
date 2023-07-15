@@ -48,10 +48,11 @@ func register_grab():
 	original_collision_mask = collision_mask
 	collision_layer = picked_up_layers
 	collision_mask = picked_up_mask
+	held = true
 	
 ## Remotely unregisters a grab
 func unregister_grab():
 	collision_layer = original_collision_layer
 	collision_mask = original_collision_mask
-	
+	held = false
 	
