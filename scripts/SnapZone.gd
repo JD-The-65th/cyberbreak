@@ -6,7 +6,7 @@ var snapped_module: RigidBody3D
 
 var joint : Joint3D
 
-@export_enum("Generic", "Socket") var joint_type : String = "Generic"
+@export_enum("Generic", "Socket", "Hinge") var joint_type : String = "Generic"
 @export_enum("Cube", "Sphere", "Bigger Sphere") var collision_type : String = "Cube"
 
 func snap_module(module: RigidBody3D):
@@ -51,6 +51,12 @@ func snap_module(module: RigidBody3D):
 		joint.set_param_x(2, 2.0)
 		joint.set_param_y(2, 2.0)
 		joint.set_param_z(2, 2.0)
+	elif joint_type == "Hinge":
+		joint.set_flag(0, true)
+		joint.set_param(0, 0.99)
+		joint.set_param(1, 0)
+		joint.set_param(2, 0)
+		
 	
 	
 

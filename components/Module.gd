@@ -34,6 +34,8 @@ func spawn_joint(type: String = "Generic") -> Joint3D:
 	var joint = Joint3D
 	if type == "Socket":
 		joint = ConeTwistJoint3D.new()
+	elif type == "Hinge":
+		joint = HingeJoint3D.new()
 	else:
 		joint = Generic6DOFJoint3D.new()
 	
