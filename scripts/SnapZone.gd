@@ -92,7 +92,7 @@ func _on_body_exited(body: RigidBody3D):
 	return
 
 func update_child_was_grabbed():
-	if get_parent().snapped_to:
+	if !get_parent().snapped_to.is_empty():
 		for i in get_parent().snapped_to:
 			i.register_grab()
 			snapped_module.emit_signal("grabbed")
@@ -101,7 +101,7 @@ func update_child_was_grabbed():
 func update_child_was_let_go():
 	# This can EASILY be sent in an infinite loop if configured incorrectly
 	# Infinite loop -> Crash ):
-	if get_parent().snapped_to:
+	if !get_parent().snapped_to.is_empty():
 		for i in get_parent().snapped_to:
 			i.unregister_grab()
 			snapped_module.emit_signal("ungrabbed")
