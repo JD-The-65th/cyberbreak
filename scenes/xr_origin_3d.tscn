@@ -70,7 +70,6 @@ teleport_button_action = "primary_click"
 [node name="RightPhysicsHand" parent="RightHand" instance=ExtResource("7_8ghvb")]
 
 [node name="GrabFunction" parent="RightHand" instance=ExtResource("4_xy7vm")]
-picked_up_mask = 196615
 
 [node name="Poke" parent="RightHand" instance=ExtResource("7_70gaa")]
 
